@@ -2,12 +2,10 @@ import UIKit
 
 class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ingredientsPickerView: UIPickerView!
+    @IBOutlet weak var dishTypePickerView: UIPickerView!
     
-    var imageArray: [UIImage] = [
+    var ingredientsImageArray: [UIImage] = [
         UIImage(named: "beacon")!,
         UIImage(named: "cheese")!,
         UIImage(named: "chocolate")!,
@@ -15,12 +13,22 @@ class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         UIImage(named: "strawberry")!
     ]
     
+    var dishTypeImageArray: [UIImage] = [
+        UIImage(named: "bean salad")!,
+        UIImage(named: "broccoli salad")!,
+        UIImage(named: "dish")!,
+        UIImage(named: "pork butt")!,
+        UIImage(named: "salad with broccoli")!
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ingredientsPickerView.delegate = self
         ingredientsPickerView.dataSource = self
-        imageView.image = UIImage(named: "chocolate")
+        
+        dishTypePickerView.delegate = self
+        dishTypePickerView.dataSource = self
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -28,7 +36,12 @@ class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return imageArray.count
+        if (pickerView.tag == 1) {
+            return ingredientsImageArray.count
+        } else {
+            return dishTypeImageArray.count
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -37,23 +50,13 @@ class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-//        let myView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-        var myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         
-//        switch row {
-//        case 0:
-//            myImageView = UIImageView(image: UIImage(named: "beacon"))
-//        case 1:
-//            myImageView = UIImageView(image: UIImage(named: "cheese"))
-//        case 2:
-//            myImageView = UIImageView(image: UIImage(named: "chocolate"))
-//        default:
-//            myImageView = UIImageView(image: UIImage(named: "chocolate"))
-//        }
-        
-        myImageView.image = imageArray[row]
-        
-//        myView.addSubview(myImageView)
+        if (pickerView.tag == 1) {
+            myImageView.image = ingredientsImageArray[row]
+        } else {
+            myImageView.image = dishTypeImageArray[row]
+        }
         
         return myImageView
     }
