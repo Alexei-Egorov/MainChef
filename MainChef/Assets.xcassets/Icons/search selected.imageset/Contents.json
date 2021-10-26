@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "search selected.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "search selected.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },

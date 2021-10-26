@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "grocery.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "grocery.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },

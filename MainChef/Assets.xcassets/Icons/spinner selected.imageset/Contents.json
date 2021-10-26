@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "spinner selected.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "spinner selected.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
