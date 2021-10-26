@@ -69,6 +69,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		A2FC628927287A8200EB3BCE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E147A0782159176200AD9178 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +101,7 @@
 				E147A08D2159176400AD9178 /* LaunchScreen.storyboard */,
 				E147A0902159176400AD9178 /* Info.plist */,
 				E147A08B2159176300AD9178 /* Assets.xcassets */,
+				A2FC628927287A8200EB3BCE /* Fonts */,
 			);
 			path = MainChef;
 			sourceTree = "<group>";

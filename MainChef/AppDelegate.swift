@@ -60,7 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        UINavigationBar.appearance().backgroundColor = UIColor.white
+//        UINavigationBar.appearance().backgroundColor = UIColor.clear
+        UINavigationBar.appearance().isHidden = true
         
         window?.rootViewController = tabController
         
