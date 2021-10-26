@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gws-hb-jc6">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gws-hb-jc6">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="broccoli salad" translatesAutoresizingMaskIntoConstraints="NO" id="yMc-6g-9WL">
                                         <rect key="frame" x="21" y="71" width="70" height="70"/>
@@ -56,9 +55,37 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bean salad" translatesAutoresizingMaskIntoConstraints="NO" id="TI3-In-2uD">
+                                <rect key="frame" x="222" y="199" width="174" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDO-dY-bkg" userLabel="porkView">
+                                <rect key="frame" x="20" y="199" width="174" height="174"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pork butt" translatesAutoresizingMaskIntoConstraints="NO" id="UYm-58-h3l">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlX-Xq-5Pl">
+                                        <rect key="frame" x="10" y="145" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rlX-Xq-5Pl" secondAttribute="bottom" constant="10" id="Z8h-Qc-Dxy"/>
+                                    <constraint firstItem="rlX-Xq-5Pl" firstAttribute="leading" secondItem="LDO-dY-bkg" secondAttribute="leading" constant="10" id="njd-bU-vPF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LDO-dY-bkg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="GnH-OI-82B"/>
+                            <constraint firstItem="LDO-dY-bkg" firstAttribute="top" secondItem="Gws-hb-jc6" secondAttribute="bottom" constant="24" id="kYX-BV-T30"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="favouritesImage" destination="yMc-6g-9WL" id="dPK-ht-1yv"/>
@@ -74,7 +101,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bean salad" width="320" height="480"/>
         <image name="broccoli salad" width="320" height="483"/>
+        <image name="pork butt" width="320" height="213.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

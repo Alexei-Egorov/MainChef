@@ -14,10 +14,10 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         setupGradientLayer()
+        setupView()
     }
     
     override func viewDidLayoutSubviews() {
-        
         gradientLayer.frame = headerView.bounds
     }
     
@@ -28,6 +28,16 @@ class ProfileViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 0.7, y: 1)
         
         headerView.layer.addSublayer(gradientLayer)
+    }
+    
+    func setupView() {
+        favouritesImage.layer.cornerRadius = 17
+        newCookbookImage.layer.cornerRadius = 35
+        
+        headerView.bringSubviewToFront(favouritesImage)
+        headerView.bringSubviewToFront(favouritesLabel)
+        headerView.bringSubviewToFront(newCookbookImage)
+        headerView.bringSubviewToFront(newCookbookLabel)
     }
     
 
