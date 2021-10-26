@@ -15,6 +15,8 @@
 		A2FC628427282B3F00EB3BCE /* GroceryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC628327282B3F00EB3BCE /* GroceryViewController.swift */; };
 		A2FC628627282B6100EB3BCE /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC628527282B6100EB3BCE /* Profile.storyboard */; };
 		A2FC628827282B9200EB3BCE /* Grocery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC628727282B9200EB3BCE /* Grocery.storyboard */; };
+		A2FC628D272892D500EB3BCE /* DishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC628B272892D500EB3BCE /* DishCollectionViewCell.swift */; };
+		A2FC628E272892D500EB3BCE /* DishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2FC628C272892D500EB3BCE /* DishCollectionViewCell.xib */; };
 		E147A0852159176200AD9178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E147A0842159176200AD9178 /* AppDelegate.swift */; };
 		E147A08C2159176300AD9178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E147A08B2159176300AD9178 /* Assets.xcassets */; };
 		E147A08F2159176400AD9178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E147A08D2159176400AD9178 /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 		A2FC628327282B3F00EB3BCE /* GroceryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewController.swift; sourceTree = "<group>"; };
 		A2FC628527282B6100EB3BCE /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A2FC628727282B9200EB3BCE /* Grocery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Grocery.storyboard; sourceTree = "<group>"; };
+		A2FC628B272892D500EB3BCE /* DishCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2FC628C272892D500EB3BCE /* DishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishCollectionViewCell.xib; sourceTree = "<group>"; };
 		E147A0812159176200AD9178 /* MainChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MainChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E147A0842159176200AD9178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E147A08B2159176300AD9178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A2FC628A272892AB00EB3BCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2FC628B272892D500EB3BCE /* DishCollectionViewCell.swift */,
+				A2FC628C272892D500EB3BCE /* DishCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E147A0782159176200AD9178 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E147A0842159176200AD9178 /* AppDelegate.swift */,
+				A2FC628A272892AB00EB3BCE /* Views */,
 				A2FC627C2728297E00EB3BCE /* ViewControllers */,
 				A2FC62792728293900EB3BCE /* Storyboards */,
 				E147A08D2159176400AD9178 /* LaunchScreen.storyboard */,
@@ -167,6 +181,7 @@
 				A2FC6277272828F800EB3BCE /* Spinner.storyboard in Resources */,
 				E147A08F2159176400AD9178 /* LaunchScreen.storyboard in Resources */,
 				A2FC628627282B6100EB3BCE /* Profile.storyboard in Resources */,
+				A2FC628E272892D500EB3BCE /* DishCollectionViewCell.xib in Resources */,
 				A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */,
 				A2FC628827282B9200EB3BCE /* Grocery.storyboard in Resources */,
 				E147A08C2159176300AD9178 /* Assets.xcassets in Resources */,
@@ -184,6 +199,7 @@
 				A2FC627E2728299600EB3BCE /* SpinnerViewController.swift in Sources */,
 				A2FC628427282B3F00EB3BCE /* GroceryViewController.swift in Sources */,
 				A2FC628227282B2500EB3BCE /* ProfileViewController.swift in Sources */,
+				A2FC628D272892D500EB3BCE /* DishCollectionViewCell.swift in Sources */,
 				E147A0852159176200AD9178 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
