@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */; };
 		A2F19A8C275EC746008537CE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2F19A8A275EC746008537CE /* DataModel.xcdatamodeld */; };
 		A2FC6277272828F800EB3BCE /* Spinner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC6276272828F800EB3BCE /* Spinner.storyboard */; };
 		A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC627A2728297A00EB3BCE /* Search.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		A2F19A8B275EC746008537CE /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A2FC6276272828F800EB3BCE /* Spinner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Spinner.storyboard; sourceTree = "<group>"; };
 		A2FC627A2728297A00EB3BCE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -57,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2DD75F6275FDCB500768178 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD75F7275FDCC700768178 /* SFProText */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A2DD75F7275FDCC700768178 /* SFProText */ = {
+			isa = PBXGroup;
+			children = (
+				A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */,
+			);
+			path = SFProText;
+			sourceTree = "<group>";
+		};
 		A2FC62792728293900EB3BCE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +138,7 @@
 				A2FC628A272892AB00EB3BCE /* Views */,
 				A2FC627C2728297E00EB3BCE /* ViewControllers */,
 				A2FC62792728293900EB3BCE /* Storyboards */,
+				A2DD75F6275FDCB500768178 /* Resources */,
 				A2F19A8A275EC746008537CE /* DataModel.xcdatamodeld */,
 				E147A08D2159176400AD9178 /* LaunchScreen.storyboard */,
 				E147A0902159176400AD9178 /* Info.plist */,
@@ -194,6 +213,7 @@
 				A2FC628627282B6100EB3BCE /* Profile.storyboard in Resources */,
 				A2FC628E272892D500EB3BCE /* DishCollectionViewCell.xib in Resources */,
 				A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */,
+				A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */,
 				A2FC628827282B9200EB3BCE /* Grocery.storyboard in Resources */,
 				E147A08C2159176300AD9178 /* Assets.xcassets in Resources */,
 			);
