@@ -41,6 +41,7 @@ class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         gradientLayer.frame = headerView.bounds
     }

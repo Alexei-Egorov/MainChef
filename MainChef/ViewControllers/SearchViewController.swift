@@ -2,27 +2,49 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    let backgroundView = UIView()
+    let contentView = UIView()
+    let headerView = UIView()
     let boxHorizontalIndent: CGFloat = 8  //indent from UIView vertical edge to UILabel
     let boxVerticalIndent: CGFloat = 4
     let backViewHorizontalIndent: CGFloat = 8  //horizontal indent between elements
     let backViewVerticalIndent: CGFloat = 8  //vertical indent between elements
     
     let window = UIApplication.shared.windows.first
+    lazy var gradientLayer = CAGradientLayer()
+    
+    var searchBar = UISearchBar()
     
     var ingredients = ["Chicken", "Pasta", "Potatoes", "Banana", "Beef", "Broccoli", "Pork", "Eggs", "Lemon", "Cheese", "Fruit", "Peppers", "Salmon", "Seafood", "Chocolate", "Fish"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backgroundView.frame = CGRect(x: 0, y: window?.safeAreaInsets.top ?? 44, width: view.frame.width, height: 114.5)
-        backgroundView.backgroundColor = UIColor.systemIndigo
+        let safeAreainset = window?.safeAreaInsets.top ?? 44
+        searchBar.frame = CGRect(x: 0, y: safeAreainset, width: view.frame.width, height: 50)
         
-        view.addSubview(backgroundView)
+        let img = UIImage()
+        searchBar.backgroundImage = img
+        searchBar.barTintColor = UIColor.clear
+        
+        contentView.frame = CGRect(x: 0, y: safeAreainset + 50, width: view.frame.width, height: 114.5)
+        contentView.backgroundColor = UIColor.clear
+        
+        headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: safeAreainset + 164.5)
+        
+        setupGradientLayer()
+        
+        headerView.addSubview(searchBar)
+        headerView.addSubview(contentView)
+        
+        view.addSubview(headerView)
+//        view.addSubview(contentView)
+//        view.addSubview(searchBar)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        gradientLayer.frame = headerView.bounds
         arrangeIngredientBoxes(ingredients: ingredients)
     }
     
@@ -65,7 +87,7 @@ class SearchViewController: UIViewController {
             
             let box = genereteEngredientBox(with: textLabel, xCord: xCoord, yCord: yCoord)
             
-            backgroundView.addSubview(box)
+            contentView.addSubview(box)
         }
     }
     
@@ -99,9 +121,20 @@ class SearchViewController: UIViewController {
         if let ingrName = our?.text {
             ingredients = ingredients.filter{ $0 != ingrName }
         }
-        for view in backgroundView.subviews {
+        for view in contentView.subviews {
             view.removeFromSuperview()
         }
         arrangeIngredientBoxes(ingredients: ingredients)
+    }
+    
+    
+    //MARK: - Additional viewSetup supporting functions
+    func setupGradientLayer() {
+        
+        gradientLayer.colors = [UIColor(red: 255/255, green: 78/255, blue: 80/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 212/255, blue: 35/255, alpha: 1.0).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.3, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.7, y: 1)
+        
+        headerView.layer.addSublayer(gradientLayer)
     }
 }
