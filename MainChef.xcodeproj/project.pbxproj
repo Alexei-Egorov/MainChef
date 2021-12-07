@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2F19A8C275EC746008537CE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2F19A8A275EC746008537CE /* DataModel.xcdatamodeld */; };
 		A2FC6277272828F800EB3BCE /* Spinner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC6276272828F800EB3BCE /* Spinner.storyboard */; };
 		A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC627A2728297A00EB3BCE /* Search.storyboard */; };
 		A2FC627E2728299600EB3BCE /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC627D2728299600EB3BCE /* SpinnerViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2F19A8B275EC746008537CE /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A2FC6276272828F800EB3BCE /* Spinner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Spinner.storyboard; sourceTree = "<group>"; };
 		A2FC627A2728297A00EB3BCE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A2FC627D2728299600EB3BCE /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				A2FC628A272892AB00EB3BCE /* Views */,
 				A2FC627C2728297E00EB3BCE /* ViewControllers */,
 				A2FC62792728293900EB3BCE /* Storyboards */,
+				A2F19A8A275EC746008537CE /* DataModel.xcdatamodeld */,
 				E147A08D2159176400AD9178 /* LaunchScreen.storyboard */,
 				E147A0902159176400AD9178 /* Info.plist */,
 				E147A08B2159176300AD9178 /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				TargetAttributes = {
 					E147A0802159176200AD9178 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1310;
 					};
 				};
 			};
@@ -203,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2FC6280272829AD00EB3BCE /* SearchViewController.swift in Sources */,
+				A2F19A8C275EC746008537CE /* DataModel.xcdatamodeld in Sources */,
 				A2FC627E2728299600EB3BCE /* SpinnerViewController.swift in Sources */,
 				A2FC628427282B3F00EB3BCE /* GroceryViewController.swift in Sources */,
 				A2FC62912728B9C800EB3BCE /* FoodTableViewCell.swift in Sources */,
@@ -358,7 +363,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AE.MainChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -377,7 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AE.MainChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -404,6 +409,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A2F19A8A275EC746008537CE /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2F19A8B275EC746008537CE /* DataModel.xcdatamodel */,
+			);
+			currentVersion = A2F19A8B275EC746008537CE /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E147A0792159176200AD9178 /* Project object */;
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CookBook" representedClassName=".CookBook" syncable="YES" codeGenerationType="class">
+        <relationship name="folders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CookbookFolder" inverseName="parentCookbook" inverseEntity="CookbookFolder"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cookbook" inverseEntity="User"/>
+    </entity>
+    <entity name="CookbookFolder" representedClassName=".CookbookFolder" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="parentCookbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CookBook" inverseName="folders" inverseEntity="CookBook"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="newRelationship" inverseEntity="Recipe"/>
+    </entity>
+    <entity name="Ingredient" representedClassName=".Ingredient" syncable="YES" codeGenerationType="class">
+        <attribute name="category" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="quantityStyle" attributeType="String"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe"/>
+        <relationship name="relatedProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="parentIngredient" inverseEntity="Product"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="class">
+        <attribute name="ingredientName" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentIngredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="relatedProducts" inverseEntity="Ingredient"/>
+        <relationship name="parentShoppingList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="products" inverseEntity="ShoppingList"/>
+    </entity>
+    <entity name="Recipe" representedClassName=".Receipt" syncable="YES" codeGenerationType="class">
+        <attribute name="dishType" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="recipes" inverseEntity="Ingredient"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CookbookFolder" inverseName="recipes" inverseEntity="CookbookFolder"/>
+        <relationship name="stages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage" inverseName="parentRecipe" inverseEntity="Stage"/>
+    </entity>
+    <entity name="ShoppingList" representedClassName=".ShoppingList" syncable="YES" codeGenerationType="class">
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="parentShoppingList" inverseEntity="Product"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="shoppingList" inverseEntity="User"/>
+    </entity>
+    <entity name="Stage" representedClassName=".Stage" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="serialNumber" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="stages" inverseEntity="Recipe"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Step" inverseName="parentStage" inverseEntity="Step"/>
+    </entity>
+    <entity name="Step" representedClassName=".Step" syncable="YES" codeGenerationType="class">
+        <attribute name="descr" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="serialNumber" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentStage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stage" inverseName="steps" inverseEntity="Stage"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="cookbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CookBook" inverseName="user" inverseEntity="CookBook"/>
+        <relationship name="shoppingList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="user" inverseEntity="ShoppingList"/>
+    </entity>
+    <elements>
+        <element name="Ingredient" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Recipe" positionX="205.3215942382812" positionY="-71.44172668457031" width="128" height="148"/>
+        <element name="Stage" positionX="403.2739868164062" positionY="100.3912658691406" width="128" height="118"/>
+        <element name="Step" positionX="586.0536499023438" positionY="173.6566162109375" width="128" height="103"/>
+        <element name="User" positionX="-102.5274658203125" positionY="306.1482543945312" width="128" height="163"/>
+        <element name="ShoppingList" positionX="124.6174926757812" positionY="424.8027954101562" width="128" height="73"/>
+        <element name="Product" positionX="404.843994140625" positionY="251.564697265625" width="128" height="103"/>
+        <element name="CookBook" positionX="55.4781494140625" positionY="542.2110290527344" width="128" height="73"/>
+        <element name="CookbookFolder" positionX="388.51953125" positionY="478.0657348632812" width="128" height="88"/>
+    </elements>
+</model>

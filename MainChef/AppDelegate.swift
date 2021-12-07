@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,15 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let items = tabController.tabBar.items {
             for item in items {
                 if let image = item.image {
-                    
                     item.image = image.withRenderingMode(.alwaysOriginal)
                 }
-                
                 if let selectedImage = item.selectedImage {
-                    
                     item.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
                 }
-                
                 item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
             }
         }
@@ -88,8 +85,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        self.saveContext()
     }
 
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "DataModel")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
+        return container
+    }()
+    
+    // MARK: - Core Data Saving support
 
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
 }
 
