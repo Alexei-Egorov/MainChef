@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vcData: [(UIViewController, UIImage, UIImage)] = [
             (spinnerVC, UIImage(named: "spinner")!, UIImage(named: "spinner selected")!),
             (searchVC, UIImage(named: "search")!, UIImage(named: "search selected")!),
-            (profileVC, UIImage(named: "profile")!, UIImage(named: "profile selected")!),
+            (profileVC, UIImage(named: "book")!, UIImage(named: "book selected")!),
             (groceryVC, UIImage(named: "grocery")!, UIImage(named: "grocery selected")!)
         ]
         
@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabController.viewControllers = vcs
         tabController.tabBar.isTranslucent = false
 //        tabController.delegate = tabBarDelegate
+        tabController.tabBar.backgroundColor = UIColor.white
         
         if let items = tabController.tabBar.items {
             for item in items {
