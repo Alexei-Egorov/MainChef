@@ -11,11 +11,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let tabController = UITabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let tabController = UITabBarController()
+//        let tabController = UITabBarController()
         
         let spinnerStoryboard = UIStoryboard(name: "Spinner", bundle: nil)
         let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
@@ -24,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let spinnerVC = spinnerStoryboard.instantiateViewController(identifier: "Spinner") as! SpinnerViewController
         let searchVC = searchStoryboard.instantiateViewController(identifier: "Search") as! SearchViewController
-        let profileVC = profileStoryboard.instantiateViewController(identifier: "Profile") as! ProfileViewController
+        let profileVC = profileStoryboard.instantiateViewController(identifier: "Profile") as! CookbookViewController
         let groceryVC = groceryStoryboard.instantiateViewController(identifier: "Grocery") as! GroceryViewController
         
         let vcData: [(UIViewController, UIImage, UIImage)] = [
