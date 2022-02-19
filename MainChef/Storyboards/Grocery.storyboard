@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,6 +8,17 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Grocery View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -26,15 +37,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVF-zx-fo5">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVF-zx-fo5">
                                         <rect key="frame" x="364" y="87" width="40" height="40"/>
-                                        <color key="backgroundColor" red="0.98823529409999999" green="0.56862745100000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="BiG-ev-XbN"/>
                                             <constraint firstAttribute="height" constant="40" id="LKx-hs-Ngz"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="profileButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="elM-Qf-hsU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -77,33 +93,244 @@
                             <constraint firstItem="17E-gF-pTp" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="rNJ-tf-vsM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="v0o-CP-t5Z"/>
                     <connections>
                         <outlet property="headerView" destination="17E-gF-pTp" id="cIV-Vp-KXT"/>
+                        <outlet property="profileButton" destination="lVF-zx-fo5" id="74J-Aq-gUc"/>
                         <outlet property="tableView" destination="YNt-zu-KcP" id="O4e-uk-b9N"/>
                         <outlet property="titleLabel" destination="wth-IM-bJl" id="qGf-Fe-C8g"/>
+                        <segue destination="oPo-yN-3Nx" kind="show" identifier="toProfile" id="obA-Pd-bLA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="98.4375"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="Omr-vk-SWZ">
             <objects>
                 <viewController id="oPo-yN-3Nx" customClass="ProfileViewController" customModule="MainChef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMQ-y4-vQS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyG-01-kyD">
+                                <rect key="frame" x="16" y="100" width="147" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sp-jJ-tOd">
+                                <rect key="frame" x="364" y="95.5" width="38" height="38"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="KfU-Kv-juY"/>
+                                    <constraint firstAttribute="height" constant="38" id="d0N-f9-wfW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="createRecipeButtonTapped:" destination="oPo-yN-3Nx" eventType="touchUpInside" id="61H-TQ-Wzf"/>
+                                    <segue destination="0f8-3q-hFh" kind="show" identifier="toCreateRecipe" id="LGT-FN-0AK"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M7H-Qf-R3Y">
+                                <rect key="frame" x="16" y="143.5" width="382" height="702.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Fdv-Nx-Qb6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fdv-Nx-Qb6" firstAttribute="bottom" secondItem="M7H-Qf-R3Y" secondAttribute="bottom" constant="16" id="0WS-HZ-4JB"/>
+                            <constraint firstItem="6Sp-jJ-tOd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PyG-01-kyD" secondAttribute="trailing" constant="10" id="4ri-Kg-krX"/>
+                            <constraint firstItem="PyG-01-kyD" firstAttribute="leading" secondItem="Fdv-Nx-Qb6" secondAttribute="leading" constant="16" id="5aS-LW-h0s"/>
+                            <constraint firstItem="PyG-01-kyD" firstAttribute="centerY" secondItem="6Sp-jJ-tOd" secondAttribute="centerY" id="64Z-iN-Hka"/>
+                            <constraint firstItem="PyG-01-kyD" firstAttribute="top" secondItem="Fdv-Nx-Qb6" secondAttribute="top" constant="12" id="H4h-Ja-9ST"/>
+                            <constraint firstItem="Fdv-Nx-Qb6" firstAttribute="trailing" secondItem="M7H-Qf-R3Y" secondAttribute="trailing" constant="16" id="Lav-6q-6Fc"/>
+                            <constraint firstItem="M7H-Qf-R3Y" firstAttribute="leading" secondItem="Fdv-Nx-Qb6" secondAttribute="leading" constant="16" id="WlJ-oT-Ncz"/>
+                            <constraint firstItem="Fdv-Nx-Qb6" firstAttribute="trailing" secondItem="6Sp-jJ-tOd" secondAttribute="trailing" constant="12" id="cJ8-wD-aJ6"/>
+                            <constraint firstItem="M7H-Qf-R3Y" firstAttribute="top" secondItem="6Sp-jJ-tOd" secondAttribute="bottom" constant="10" id="kup-KU-0hh"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="ILc-mx-Zg2"/>
+                    <connections>
+                        <outlet property="createRecipeButton" destination="6Sp-jJ-tOd" id="FZk-8J-xh9"/>
+                        <outlet property="tableView" destination="M7H-Qf-R3Y" id="l84-Ix-S31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zO-wN-cOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="95"/>
+            <point key="canvasLocation" x="1834.7826086956522" y="94.419642857142847"/>
+        </scene>
+        <!--Create New Recipe-->
+        <scene sceneID="dAu-bj-u4X">
+            <objects>
+                <viewController id="0f8-3q-hFh" customClass="CreateRecipeViewController" customModule="MainChef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fA7-eP-77r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GO2-Yj-AVt">
+                                <rect key="frame" x="16" y="100" width="125.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNu-KT-4cT">
+                                <rect key="frame" x="16" y="126.5" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GUU-Tz-8uW"/>
+                                    <constraint firstAttribute="width" constant="50" id="p0S-nI-u2h"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="chooseImageButtonTapped:" destination="0f8-3q-hFh" eventType="touchUpInside" id="Va6-BD-eX1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give it a name and select a dish type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAS-dz-Pkg" userLabel="Give it a name label">
+                                <rect key="frame" x="16" y="194.5" width="322" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Title" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vBD-ew-QgR">
+                                <rect key="frame" x="16" y="226" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="KdT-CL-KUa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-32-hkM">
+                                <rect key="frame" x="16" y="270" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="GeE-xi-19a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create short descripton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msu-qO-e4W">
+                                <rect key="frame" x="16" y="329" width="211" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Type a description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgD-RP-fov">
+                                <rect key="frame" x="16" y="360.5" width="382" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gOB-Rz-PD2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzE-q7-hag">
+                                <rect key="frame" x="16" y="485.5" width="161" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqI-eZ-MLz">
+                                <rect key="frame" x="16" y="517" width="382" height="32"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="YoC-ir-Dnb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose number of stages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqe-zz-Ntb">
+                                <rect key="frame" x="16" y="574" width="226.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 stage is a phase of your recipe. Leave it at 1 if you’re not going to divide your recipe into phases" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM2-T7-lhB">
+                                <rect key="frame" x="16" y="605.5" width="287.5" height="54"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FX-Zd-JeB">
+                                <rect key="frame" x="318" y="574" width="80" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8Mj-AS-M3V"/>
+                                    <constraint firstAttribute="height" constant="50" id="Fdx-wl-iPH"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wwj-4d-gSa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vBD-ew-QgR" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="1bZ-0k-ucI"/>
+                            <constraint firstItem="WgD-RP-fov" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="47l-nx-HgU"/>
+                            <constraint firstItem="xqe-zz-Ntb" firstAttribute="top" secondItem="lqI-eZ-MLz" secondAttribute="bottom" constant="25" id="BhD-5V-bNT"/>
+                            <constraint firstItem="msu-qO-e4W" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="C1t-Nv-76x"/>
+                            <constraint firstItem="CAS-dz-Pkg" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="FAV-7b-fH3"/>
+                            <constraint firstItem="ZIa-32-hkM" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="G6z-Kr-uCC"/>
+                            <constraint firstItem="wwj-4d-gSa" firstAttribute="trailing" secondItem="WgD-RP-fov" secondAttribute="trailing" constant="16" id="Gir-q8-qSY"/>
+                            <constraint firstItem="dM2-T7-lhB" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="GmY-gn-Zbp"/>
+                            <constraint firstItem="WgD-RP-fov" firstAttribute="top" secondItem="msu-qO-e4W" secondAttribute="bottom" constant="10" id="HnQ-lN-ZYw"/>
+                            <constraint firstItem="msu-qO-e4W" firstAttribute="top" secondItem="ZIa-32-hkM" secondAttribute="bottom" constant="25" id="IGV-Qd-laG"/>
+                            <constraint firstItem="2FX-Zd-JeB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xqe-zz-Ntb" secondAttribute="trailing" constant="10" id="OU3-vH-sAu"/>
+                            <constraint firstItem="2FX-Zd-JeB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dM2-T7-lhB" secondAttribute="trailing" constant="10" id="OlQ-8L-ScG"/>
+                            <constraint firstItem="wwj-4d-gSa" firstAttribute="trailing" secondItem="lqI-eZ-MLz" secondAttribute="trailing" constant="16" id="Ow2-5p-6ht"/>
+                            <constraint firstItem="xqe-zz-Ntb" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="QdO-Oc-Hmz"/>
+                            <constraint firstItem="aNu-KT-4cT" firstAttribute="top" secondItem="GO2-Yj-AVt" secondAttribute="bottom" constant="5" id="RKD-Aw-AM3"/>
+                            <constraint firstItem="GO2-Yj-AVt" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="TNk-id-SqW"/>
+                            <constraint firstItem="wwj-4d-gSa" firstAttribute="trailing" secondItem="2FX-Zd-JeB" secondAttribute="trailing" constant="16" id="WXp-mo-87d"/>
+                            <constraint firstItem="CAS-dz-Pkg" firstAttribute="top" secondItem="aNu-KT-4cT" secondAttribute="bottom" constant="18" id="Yjf-ea-Fi1"/>
+                            <constraint firstItem="RzE-q7-hag" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="baZ-h9-Z3G"/>
+                            <constraint firstItem="lqI-eZ-MLz" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="eAn-MM-EdL"/>
+                            <constraint firstItem="ZIa-32-hkM" firstAttribute="top" secondItem="vBD-ew-QgR" secondAttribute="bottom" constant="10" id="hgt-6A-WvZ"/>
+                            <constraint firstItem="RzE-q7-hag" firstAttribute="top" secondItem="WgD-RP-fov" secondAttribute="bottom" constant="25" id="mR2-dK-EcL"/>
+                            <constraint firstItem="aNu-KT-4cT" firstAttribute="leading" secondItem="wwj-4d-gSa" secondAttribute="leading" constant="16" id="rN8-vL-AWM"/>
+                            <constraint firstItem="2FX-Zd-JeB" firstAttribute="top" secondItem="xqe-zz-Ntb" secondAttribute="top" id="t4o-aN-IS4"/>
+                            <constraint firstItem="vBD-ew-QgR" firstAttribute="top" secondItem="CAS-dz-Pkg" secondAttribute="bottom" constant="10" id="ue9-DU-fLZ"/>
+                            <constraint firstItem="lqI-eZ-MLz" firstAttribute="top" secondItem="RzE-q7-hag" secondAttribute="bottom" constant="10" id="xrY-zb-N2G"/>
+                            <constraint firstItem="GO2-Yj-AVt" firstAttribute="top" secondItem="wwj-4d-gSa" secondAttribute="top" constant="12" id="zDj-KM-1FG"/>
+                            <constraint firstItem="dM2-T7-lhB" firstAttribute="top" secondItem="xqe-zz-Ntb" secondAttribute="bottom" constant="10" id="zPQ-LN-R6r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create New Recipe" id="qWb-wR-oyr"/>
+                    <connections>
+                        <outlet property="chooseImageButton" destination="aNu-KT-4cT" id="vE9-of-g7p"/>
+                        <outlet property="chooseImageLabel" destination="GO2-Yj-AVt" id="QQj-a3-eWE"/>
+                        <outlet property="giveItANameLabel" destination="CAS-dz-Pkg" id="gJU-tk-N8m"/>
+                        <outlet property="labelToChooseImageButtonConstraint" destination="Yjf-ea-Fi1" id="K6w-qE-F8m"/>
+                        <outlet property="numberOfStagesPicker" destination="2FX-Zd-JeB" id="n5V-8L-I4r"/>
+                        <outlet property="recipeDescriptionTextField" destination="WgD-RP-fov" id="40y-fV-FiO"/>
+                        <outlet property="recipeTitleTextField" destination="vBD-ew-QgR" id="R4p-rv-mMZ"/>
+                        <outlet property="selectIngredientsView" destination="lqI-eZ-MLz" id="KRR-en-SXW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhF-su-5GM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2642.0289855072465" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uzn-J2-DTH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eF7-T1-7iR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="035-0Q-Muq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="eML-7K-YXS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gw-Tr-qCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

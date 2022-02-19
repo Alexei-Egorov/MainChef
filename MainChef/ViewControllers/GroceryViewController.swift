@@ -1,10 +1,11 @@
 import UIKit
 
-class GroceryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GroceryViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileButton: UIButton!
     
     lazy var gradientLayer = CAGradientLayer()
     
@@ -28,30 +29,34 @@ class GroceryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.register(UINib.init(nibName: "FoodTableViewCell", bundle: nil), forCellReuseIdentifier: "FoodTableViewCell")
 
-        setupGradientLayer()
         setupView()
     }
     
     override func viewDidLayoutSubviews() {
-        
         gradientLayer.frame = headerView.bounds
     }
     
+    func setupView() {
+        setupGradientLayer()
+        headerView.bringSubviewToFront(titleLabel)
+        profileButton.setImage(UIImage(named: "profileIcon"), for: .normal)
+    }
+    
     func setupGradientLayer() {
-        
         gradientLayer.colors = [UIColor(red: 255/255, green: 78/255, blue: 80/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 212/255, blue: 35/255, alpha: 1.0).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.3, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.7, y: 1)
-        
-        headerView.layer.addSublayer(gradientLayer)
+        headerView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func setupView() {
-        headerView.bringSubviewToFront(titleLabel)
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toProfile", sender: nil)
     }
     
-    
-    //MARK: - UITableView
+}
+
+//MARK: - UITableView
+extension GroceryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

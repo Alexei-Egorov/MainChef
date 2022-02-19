@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		93A91E23277B326800D28085 /* SelectedIngredentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A91E21277B326800D28085 /* SelectedIngredentCollectionViewCell.swift */; };
 		93A91E24277B326800D28085 /* SelectedIngredentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A91E22277B326800D28085 /* SelectedIngredentCollectionViewCell.xib */; };
+		A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */; };
+		A203162F27C06DCD002BB225 /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A203162E27C06DCD002BB225 /* UITextField + Ext.swift */; };
 		A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */; };
+		A2E0208727C1744E0075604D /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2E0208627C1744E0075604D /* SF-Pro.ttf */; };
 		A2E274ED27BFFA9600525C15 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */; };
+		A2E274EF27BFFB5500525C15 /* CreateRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E274EE27BFFB5500525C15 /* CreateRecipeViewController.swift */; };
 		A2F19A8C275EC746008537CE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2F19A8A275EC746008537CE /* DataModel.xcdatamodeld */; };
 		A2FC6277272828F800EB3BCE /* Spinner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC6276272828F800EB3BCE /* Spinner.storyboard */; };
 		A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC627A2728297A00EB3BCE /* Search.storyboard */; };
@@ -32,8 +36,12 @@
 /* Begin PBXFileReference section */
 		93A91E21277B326800D28085 /* SelectedIngredentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIngredentCollectionViewCell.swift; sourceTree = "<group>"; };
 		93A91E22277B326800D28085 /* SelectedIngredentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedIngredentCollectionViewCell.xib; sourceTree = "<group>"; };
+		A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		A203162E27C06DCD002BB225 /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		A2E0208627C1744E0075604D /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A2E274EE27BFFB5500525C15 /* CreateRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewController.swift; sourceTree = "<group>"; };
 		A2F19A8B275EC746008537CE /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A2FC6276272828F800EB3BCE /* Spinner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Spinner.storyboard; sourceTree = "<group>"; };
 		A2FC627A2728297A00EB3BCE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -65,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A203162D27C06D91002BB225 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A203162E27C06DCD002BB225 /* UITextField + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A2DD75F6275FDCB500768178 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */,
+				A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */,
+				A2E0208627C1744E0075604D /* SF-Pro.ttf */,
 			);
 			path = SFProText;
 			sourceTree = "<group>";
@@ -100,6 +118,7 @@
 				A2FC628127282B2500EB3BCE /* CookbookViewController.swift */,
 				A2FC628327282B3F00EB3BCE /* GroceryViewController.swift */,
 				A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */,
+				A2E274EE27BFFB5500525C15 /* CreateRecipeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -144,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E147A0842159176200AD9178 /* AppDelegate.swift */,
+				A203162D27C06D91002BB225 /* Extensions */,
 				A2FC628A272892AB00EB3BCE /* Views */,
 				A2FC627C2728297E00EB3BCE /* ViewControllers */,
 				A2FC62792728293900EB3BCE /* Storyboards */,
@@ -217,10 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2FC6277272828F800EB3BCE /* Spinner.storyboard in Resources */,
+				A2E0208727C1744E0075604D /* SF-Pro.ttf in Resources */,
 				A2FC62922728B9C800EB3BCE /* FoodTableViewCell.xib in Resources */,
 				E147A08F2159176400AD9178 /* LaunchScreen.storyboard in Resources */,
 				A2FC628627282B6100EB3BCE /* Cookbook.storyboard in Resources */,
 				A2FC628E272892D500EB3BCE /* DishCollectionViewCell.xib in Resources */,
+				A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */,
 				A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */,
 				93A91E24277B326800D28085 /* SelectedIngredentCollectionViewCell.xib in Resources */,
 				A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */,
@@ -237,6 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2FC6280272829AD00EB3BCE /* SearchViewController.swift in Sources */,
+				A203162F27C06DCD002BB225 /* UITextField + Ext.swift in Sources */,
+				A2E274EF27BFFB5500525C15 /* CreateRecipeViewController.swift in Sources */,
 				A2F19A8C275EC746008537CE /* DataModel.xcdatamodeld in Sources */,
 				A2E274ED27BFFA9600525C15 /* ProfileViewController.swift in Sources */,
 				A2FC627E2728299600EB3BCE /* SpinnerViewController.swift in Sources */,

@@ -20,18 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let spinnerStoryboard = UIStoryboard(name: "Spinner", bundle: nil)
         let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
-        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let cookbookStoryboard = UIStoryboard(name: "Cookbook", bundle: nil)
         let groceryStoryboard = UIStoryboard(name: "Grocery", bundle: nil)
         
         let spinnerVC = spinnerStoryboard.instantiateViewController(identifier: "Spinner") as! SpinnerViewController
         let searchVC = searchStoryboard.instantiateViewController(identifier: "Search") as! SearchViewController
-        let profileVC = profileStoryboard.instantiateViewController(identifier: "Profile") as! CookbookViewController
+        let cookbookVC = cookbookStoryboard.instantiateViewController(identifier: "Cookbook") as! CookbookViewController
         let groceryVC = groceryStoryboard.instantiateViewController(identifier: "Grocery") as! GroceryViewController
         
         let vcData: [(UIViewController, UIImage, UIImage)] = [
             (spinnerVC, UIImage(named: "spinner")!, UIImage(named: "spinner selected")!),
             (searchVC, UIImage(named: "search")!, UIImage(named: "search selected")!),
-            (profileVC, UIImage(named: "book")!, UIImage(named: "book selected")!),
+            (cookbookVC, UIImage(named: "book")!, UIImage(named: "book selected")!),
             (groceryVC, UIImage(named: "grocery")!, UIImage(named: "grocery selected")!)
         ]
         
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
 //        UINavigationBar.appearance().backgroundColor = UIColor.clear
-        UINavigationBar.appearance().isHidden = true
+        UINavigationBar.appearance().isHidden = false
         
         window?.rootViewController = tabController
         
