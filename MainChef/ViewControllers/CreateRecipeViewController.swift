@@ -2,6 +2,7 @@ import UIKit
 
 class CreateRecipeViewController: UIViewController {
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var chooseImageLabel: UILabel!
     @IBOutlet weak var chooseImageButton: UIButton!
     @IBOutlet weak var giveItANameLabel: UILabel!
@@ -9,7 +10,9 @@ class CreateRecipeViewController: UIViewController {
     @IBOutlet weak var recipeDescriptionTextField: UITextField!
     @IBOutlet weak var selectIngredientsView: UIView!
     @IBOutlet weak var numberOfStagesPicker: UIPickerView!
+    @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelToChooseImageButtonConstraint: NSLayoutConstraint!
     
     var imagePicker = UIImagePickerController()
@@ -31,6 +34,7 @@ class CreateRecipeViewController: UIViewController {
     
     func setupView() {
         setupChooseImageButton()
+        setupNextButton()
         recipeTitleTextField.setupAsCustomTextField()
         recipeDescriptionTextField.setupAsCustomTextField()
         setupImageView()
@@ -41,15 +45,17 @@ class CreateRecipeViewController: UIViewController {
         chooseImageButton.setImage(UIImage(named: "chooseImageIcon"), for: .normal)
     }
     
+    func setupNextButton() {
+        
+    }
+    
     func setupImageView() {
-        let safeAreaInset = window?.safeAreaInsets.top ?? 48
-        let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 44
-        imageView.frame = CGRect(x: 0, y: safeAreaInset + navBarHeight, width: view.frame.width, height: 200)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 200)
         imageView.contentMode = .scaleAspectFit
 //        imageView.image = UIImage(named: "cheese")
     }
 
-    
+    // chooseImageButtonTapped below
     
 }
 
@@ -75,8 +81,9 @@ extension CreateRecipeViewController: UINavigationControllerDelegate, UIImagePic
         labelToChooseImageButtonConstraint.isActive = false
         chooseImageLabel.isHidden = true
         chooseImageButton.isHidden = true
-        view.addSubview(imageView)
+        contentView.addSubview(imageView)
         NSLayoutConstraint(item: giveItANameLabel!, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 25).isActive = true
+        contentViewHeightConstraint.constant = 900
         
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             imagePicker.delegate = self
@@ -94,6 +101,7 @@ extension CreateRecipeViewController: UINavigationControllerDelegate, UIImagePic
     
 }
 
+//MARK: - UITextField
 extension CreateRecipeViewController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
