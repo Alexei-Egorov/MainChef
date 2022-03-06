@@ -47,7 +47,6 @@ class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func setupGradientLayer() {
-        
         gradientLayer.colors = [UIColor(red: 255/255, green: 78/255, blue: 80/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 212/255, blue: 35/255, alpha: 1.0).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.3, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.7, y: 1)

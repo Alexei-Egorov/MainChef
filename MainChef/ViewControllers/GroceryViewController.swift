@@ -26,8 +26,7 @@ class GroceryViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.register(UINib.init(nibName: "FoodTableViewCell", bundle: nil), forCellReuseIdentifier: "FoodTableViewCell")
+        tableView.register(UINib.init(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "FoodCell")
 
         setupView()
     }
@@ -67,7 +66,7 @@ extension GroceryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodTableViewCell") as! FoodTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell") as! FoodCell
         
         cell.itemTitle.text = itemsNames[indexPath.row]
         cell.amountLabel.text = itemsAmounts[indexPath.row]

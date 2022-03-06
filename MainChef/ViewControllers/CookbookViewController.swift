@@ -28,7 +28,7 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UINib.init(nibName: "DishCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DishCollectionViewCell")
+        collectionView.register(UINib.init(nibName: "DishCell", bundle: nil), forCellWithReuseIdentifier: "DishCell")
 
         setupGradientLayer()
         setupView()
@@ -65,7 +65,7 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DishCollectionViewCell", for: indexPath) as! DishCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DishCell", for: indexPath) as! DishCell
         
         cell.dishImage.image = postsImages[indexPath.row]
         cell.dishNameLabel.text = postsDescriptions[indexPath.row]

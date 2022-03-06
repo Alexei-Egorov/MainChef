@@ -46,16 +46,16 @@ class CreateRecipeViewController: UIViewController {
     }
     
     func setupNextButton() {
-        
+        nextButton.backgroundColor = UIColor.clear
+        nextButton.applyGradient(colors: [UIColor(named: "LeftGradientColor")!, UIColor(named: "RightGradientColor")!], locations: (CGPoint(x: 0.2, y: 0.7), CGPoint(x: 0.7, y: 0.6)), cornerRadius: 11)
     }
     
     func setupImageView() {
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 200)
         imageView.contentMode = .scaleAspectFit
-//        imageView.image = UIImage(named: "cheese")
     }
 
-    // chooseImageButtonTapped below
+    // chooseImageButtonTapped situated below
     
 }
 

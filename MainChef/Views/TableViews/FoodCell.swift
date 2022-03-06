@@ -1,14 +1,6 @@
-//
-//  FoodTableViewCell.swift
-//  MainChef
-//
-//  Created by Alexei Egorov on 27/10/2021.
-//  Copyright © 2021 Gwinyai Nyatsoka. All rights reserved.
-//
-
 import UIKit
 
-class FoodTableViewCell: UITableViewCell {
+class FoodCell: UITableViewCell {
 
     @IBOutlet weak var itemTitle: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
