@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,7 +36,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysd-Cv-HmE">
-                                <rect key="frame" x="0.0" y="252.5" width="414" height="559.5"/>
+                                <rect key="frame" x="0.0" y="245.5" width="414" height="566.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VqH-82-Wa7">
                                     <size key="itemSize" width="128" height="128"/>
@@ -45,22 +44,13 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7er-S5-7Gx">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hvH-IE-igK">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caX-24-wuK">
-                                <rect key="frame" x="0.0" y="202.5" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="202.5" width="414" height="43"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-qR-kZr" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="414" id="XL5-6I-Q7f"/>
@@ -72,7 +62,7 @@
                                     <constraint firstItem="cv0-qR-kZr" firstAttribute="width" secondItem="VnX-t2-w5s" secondAttribute="width" priority="750" id="A9b-di-iXe"/>
                                     <constraint firstItem="cv0-qR-kZr" firstAttribute="leading" secondItem="v29-Rd-kpa" secondAttribute="leading" id="NHC-BU-cCk"/>
                                     <constraint firstItem="cv0-qR-kZr" firstAttribute="height" secondItem="VnX-t2-w5s" secondAttribute="height" id="QyN-pA-6Nd"/>
-                                    <constraint firstAttribute="height" constant="50" id="WDH-35-3yH"/>
+                                    <constraint firstAttribute="height" constant="43" id="WDH-35-3yH"/>
                                     <constraint firstItem="v29-Rd-kpa" firstAttribute="bottom" secondItem="cv0-qR-kZr" secondAttribute="bottom" id="oBD-wt-cJc"/>
                                     <constraint firstItem="v29-Rd-kpa" firstAttribute="trailing" secondItem="cv0-qR-kZr" secondAttribute="trailing" id="rH0-kZ-g7a"/>
                                 </constraints>

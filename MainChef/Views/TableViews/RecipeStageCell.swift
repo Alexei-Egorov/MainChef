@@ -1,6 +1,6 @@
 import UIKit
 
-class RecipeCell: UITableViewCell, UITextFieldDelegate {
+class RecipeStageCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var stageLabel: UILabel!
     @IBOutlet weak var descriptionTextField: UITextField!

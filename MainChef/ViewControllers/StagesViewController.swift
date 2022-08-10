@@ -12,7 +12,7 @@ class StagesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
+        tableView.register(UINib(nibName: "RecipeStageCell", bundle: nil), forCellReuseIdentifier: "RecipeStageCell")
 
         setupPublishButton()
     }
@@ -31,7 +31,7 @@ extension StagesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell") as! RecipeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeStageCell") as! RecipeStageCell
         cell.stageLabel.text = "Stage \(indexPath.row + 1)"
         return cell
     }

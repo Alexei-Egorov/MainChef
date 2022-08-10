@@ -38,6 +38,8 @@ class SpinnerViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         setupGradientLayer()
         setupView()
+        
+//        print("Font names for SFProText: \(UIFont.fontNames(forFamilyName: "SF Pro Text"))")
     }
     
     override func viewDidLayoutSubviews() {
