@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CookBook" representedClassName=".CookBook" syncable="YES" codeGenerationType="class">
         <relationship name="folders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CookbookFolder" inverseName="parentCookbook" inverseEntity="CookbookFolder"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cookbook" inverseEntity="User"/>
@@ -10,7 +10,6 @@
         <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="newRelationship" inverseEntity="Recipe"/>
     </entity>
     <entity name="Ingredient" representedClassName=".Ingredient" syncable="YES" codeGenerationType="class">
-        <attribute name="category" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="quantityStyle" attributeType="String"/>
@@ -60,14 +59,14 @@
         <relationship name="shoppingList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="user" inverseEntity="ShoppingList"/>
     </entity>
     <elements>
-        <element name="Ingredient" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="CookBook" positionX="55.4781494140625" positionY="542.2110290527344" width="128" height="73"/>
+        <element name="CookbookFolder" positionX="388.51953125" positionY="478.0657348632812" width="128" height="88"/>
+        <element name="Ingredient" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Product" positionX="404.843994140625" positionY="251.564697265625" width="128" height="103"/>
         <element name="Recipe" positionX="205.3215942382812" positionY="-71.44172668457031" width="128" height="148"/>
+        <element name="ShoppingList" positionX="124.6174926757812" positionY="424.8027954101562" width="128" height="73"/>
         <element name="Stage" positionX="403.2739868164062" positionY="100.3912658691406" width="128" height="118"/>
         <element name="Step" positionX="586.0536499023438" positionY="173.6566162109375" width="128" height="103"/>
         <element name="User" positionX="-102.5274658203125" positionY="306.1482543945312" width="128" height="163"/>
-        <element name="ShoppingList" positionX="124.6174926757812" positionY="424.8027954101562" width="128" height="73"/>
-        <element name="Product" positionX="404.843994140625" positionY="251.564697265625" width="128" height="103"/>
-        <element name="CookBook" positionX="55.4781494140625" positionY="542.2110290527344" width="128" height="73"/>
-        <element name="CookbookFolder" positionX="388.51953125" positionY="478.0657348632812" width="128" height="88"/>
     </elements>
 </model>

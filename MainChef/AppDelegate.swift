@@ -6,6 +6,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,9 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let tabController = UITabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
 //        let tabController = UITabBarController()
+        
+        do {
+            _ = try Realm()
+        } catch {
+            print("Error initializing realm: \(error)")
+        }
         
         let spinnerStoryboard = UIStoryboard(name: "Spinner", bundle: nil)
         let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)

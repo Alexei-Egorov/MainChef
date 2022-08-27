@@ -22,10 +22,11 @@ class SearchViewController: UIViewController {
     let window = UIApplication.shared.windows.first
     lazy var gradientLayer = CAGradientLayer()
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     var ingredients = ["Chicken", "Pasta", "Potatoes", "Banana", "Beef", "Broccoli", "Pork", "Eggs", "Lemon", "Cheese", "Fruit", "Peppers", "Salmon", "Seafood", "Chocolate", "Fish"]
     var selectedIngredients = [String]()
+    var recipes = [RecipeModel]()
+    
+    let recipesRepository = RecipesRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class SearchViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "DishCell", bundle: nil), forCellWithReuseIdentifier: "DishCell")
         
+        downloadRecipes()
 //        setupGradientLayer()
     }
     
@@ -171,19 +173,24 @@ class SearchViewController: UIViewController {
 //
 //        headerView.layer.addSublayer(gradientLayer)
 //    }
+    
+    private func downloadRecipes() {
+        recipes = recipesRepository.loadRecipes()
+        collectionView.reloadData()
+    }
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return recipes.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DishCell", for: indexPath) as! DishCell
-        
-        cell.dishImage.image = UIImage(named: "dish")
-        cell.dishNameLabel.text = "Dish Name"
+        let recipe = recipes[indexPath.row]
+        cell.dishImage.image = recipe.photo
+        cell.dishNameLabel.text = recipe.name
         
         return cell
     }
