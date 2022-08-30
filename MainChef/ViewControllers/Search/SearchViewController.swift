@@ -1,5 +1,4 @@
 import UIKit
-import CloudKit
 
 class SearchViewController: UIViewController {
     
@@ -22,11 +21,8 @@ class SearchViewController: UIViewController {
     let window = UIApplication.shared.windows.first
     lazy var gradientLayer = CAGradientLayer()
     
-    var ingredients = ["Chicken", "Pasta", "Potatoes", "Banana", "Beef", "Broccoli", "Pork", "Eggs", "Lemon", "Cheese", "Fruit", "Peppers", "Salmon", "Seafood", "Chocolate", "Fish"]
     var selectedIngredients = [String]()
-    var recipes = [RecipeModel]()
-    
-    let recipesRepository = RecipesRepository()
+    let viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +37,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        arrangeIngredientBoxes(ingredients: ingredients)
+        arrangeIngredientBoxes(ingredients: viewModel.allIngredeints)
         contentSizeConstraint.constant = 600
     }
     
@@ -71,7 +67,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    func arrangeIngredientBoxes(ingredients: [String]) {
+    func arrangeIngredientBoxes(ingredients: [IngredientType]) {
         let viewWidth = view.frame.width
         var residualWidthPoints = viewWidth - 8  // оставшееся место в линии
         var currentLine: CGFloat = 0
@@ -82,7 +78,7 @@ class SearchViewController: UIViewController {
             let xCoord: CGFloat
             let yCoord: CGFloat
 
-            textLabel.text = item
+            textLabel.text = item.rawValue
             textLabel.textColor = UIColor.white
             textLabel.font = UIFont(name: "SFProText-Semibold", size: 16)
 
@@ -139,15 +135,14 @@ class SearchViewController: UIViewController {
         
         let our = sender.view?.subviews.first as? UILabel
         if let ingrName = our?.text {
-            ingredients = ingredients.filter{ $0 != ingrName }  // просто удаляет элемент
+            viewModel.allIngredeints = viewModel.allIngredeints.filter{ $0.rawValue != ingrName }  // просто удаляет элемент
             selectedIngredients.append(ingrName)
-            
         }
         for view in ingredientsView.subviews {
             view.removeFromSuperview()
         }
         arrangeSelectedIngredients()
-        arrangeIngredientBoxes(ingredients: ingredients)
+        arrangeIngredientBoxes(ingredients: viewModel.allIngredeints)
     }
     
     @objc func deleteElementFromSelected(_ sender: UIGestureRecognizer? = nil) {
@@ -155,14 +150,15 @@ class SearchViewController: UIViewController {
         
         let our = sender.view?.subviews.first as? UILabel
         if let ingName = our?.text {
+            guard let ingType = IngredientType(rawValue: ingName) else { return }
             selectedIngredients = selectedIngredients.filter{ $0 != ingName }
-            ingredients.append(ingName)
+            viewModel.allIngredeints.append(ingType)
         }
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
         arrangeSelectedIngredients()
-        arrangeIngredientBoxes(ingredients: ingredients)
+        arrangeIngredientBoxes(ingredients: viewModel.allIngredeints)
     }
 
 //    func setupGradientLayer() {
@@ -175,20 +171,21 @@ class SearchViewController: UIViewController {
 //    }
     
     private func downloadRecipes() {
-        recipes = recipesRepository.loadRecipes()
+        viewModel.loadRecipes()
         collectionView.reloadData()
     }
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: - UICollectionView
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipes.count
+        return viewModel.presentedRecipes.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DishCell", for: indexPath) as! DishCell
-        let recipe = recipes[indexPath.row]
+        let recipe = viewModel.presentedRecipes[indexPath.row]
         cell.dishImage.image = recipe.photo
         cell.dishNameLabel.text = recipe.name
         
@@ -196,10 +193,13 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = RecipeDetailsViewController()
+        let viewController = RecipeDetailsViewController(viewModel: RecipeDetailsViewModel(recipe: viewModel.presentedRecipes[indexPath.row]))
         show(viewController, sender: nil)
     }
-    
+}
+
+//MARK: - UICollectionView Flow Layout
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 2
         let padding: CGFloat = 6
@@ -211,35 +211,13 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(6)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let itemsPerRow: CGFloat = 2
-//        let padding: CGFloat = 6
-//        let edgeInset: CGFloat = 8
-//
-//        let collectionViewWidth = collectionView.frame.width - (padding * (itemsPerRow - 1) + (edgeInset * 2))
-//        let widthPerItem = collectionViewWidth / itemsPerRow
-//
-//        return CGSize(width: widthPerItem, height: widthPerItem)
-//
-//    }
-//
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 //        return CGFloat(6)
 //    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//
-//        return UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+    }
 }
 
 

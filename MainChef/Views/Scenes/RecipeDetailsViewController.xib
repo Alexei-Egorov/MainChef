@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +20,11 @@
                 <outlet property="authorNameLabel" destination="XOA-s4-reM" id="r74-sf-M2Q"/>
                 <outlet property="descriptionLabel" destination="L3N-Yz-BKX" id="FkC-ee-id3"/>
                 <outlet property="durationLabel" destination="1EY-qA-Tqs" id="vkR-kK-WD0"/>
-                <outlet property="ingredientsAndStages" destination="r7a-ln-ilM" id="CFg-qZ-chV"/>
+                <outlet property="imageView" destination="p95-ga-PQU" id="0eY-JH-11C"/>
+                <outlet property="leftIngredientsView" destination="hNb-bP-bop" id="T7o-Na-IK3"/>
+                <outlet property="leftIngredientsViewHeightConstraint" destination="PPe-iG-3vl" id="suY-gJ-oj1"/>
+                <outlet property="rightIngredientsView" destination="6kM-h6-jNV" id="MSC-id-Ani"/>
+                <outlet property="tableView" destination="Hld-bF-cBW" id="5PR-Fr-91a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -70,29 +74,57 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients &amp; Stages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7a-ln-ilM">
-                                    <rect key="frame" x="16" y="356.5" width="185" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients &amp; Stages:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7a-ln-ilM">
+                                    <rect key="frame" x="16" y="356.5" width="191" height="22"/>
                                     <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hld-bF-cBW">
+                                    <rect key="frame" x="16" y="526.5" width="382" height="300"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="ci4-xQ-JXA"/>
+                                    </constraints>
+                                </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-bP-bop" userLabel="Left Ingredients View">
+                                    <rect key="frame" x="16" y="388.5" width="191" height="128"/>
+                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="128" id="PPe-iG-3vl"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kM-h6-jNV" userLabel="Right Ingredients View">
+                                    <rect key="frame" x="207" y="388.5" width="191" height="128"/>
+                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="cvi-ff-FNU" firstAttribute="centerX" secondItem="p95-ga-PQU" secondAttribute="centerX" id="0Be-po-bo0"/>
+                                <constraint firstItem="Hld-bF-cBW" firstAttribute="leading" secondItem="iRi-l3-cqz" secondAttribute="leading" constant="16" id="0wV-Jr-Xqb"/>
+                                <constraint firstAttribute="trailing" secondItem="6kM-h6-jNV" secondAttribute="trailing" constant="16" id="1Mz-IV-bS4"/>
+                                <constraint firstItem="6kM-h6-jNV" firstAttribute="top" secondItem="hNb-bP-bop" secondAttribute="top" id="1jT-gj-KV0"/>
                                 <constraint firstAttribute="trailing" secondItem="L3N-Yz-BKX" secondAttribute="trailing" constant="16" id="21p-qG-RrP"/>
                                 <constraint firstAttribute="trailing" secondItem="1EY-qA-Tqs" secondAttribute="trailing" constant="8" id="3Ai-sB-yYM"/>
+                                <constraint firstItem="hNb-bP-bop" firstAttribute="top" secondItem="r7a-ln-ilM" secondAttribute="bottom" constant="10" id="6Oo-eY-pcg"/>
+                                <constraint firstItem="Hld-bF-cBW" firstAttribute="top" secondItem="hNb-bP-bop" secondAttribute="bottom" constant="10" id="8KI-wB-Em6"/>
+                                <constraint firstItem="6kM-h6-jNV" firstAttribute="width" secondItem="L3N-Yz-BKX" secondAttribute="width" multiplier="0.5" id="CU2-IR-vpo"/>
                                 <constraint firstItem="XOA-s4-reM" firstAttribute="leading" secondItem="iRi-l3-cqz" secondAttribute="leading" constant="8" id="Gb0-m6-omz"/>
+                                <constraint firstItem="hNb-bP-bop" firstAttribute="width" secondItem="L3N-Yz-BKX" secondAttribute="width" multiplier="0.5" id="HqC-pv-fQC"/>
                                 <constraint firstItem="L3N-Yz-BKX" firstAttribute="leading" secondItem="iRi-l3-cqz" secondAttribute="leading" constant="16" id="Lf1-09-ERh"/>
                                 <constraint firstItem="1EY-qA-Tqs" firstAttribute="top" secondItem="p95-ga-PQU" secondAttribute="bottom" constant="8" id="Qaj-w8-a30"/>
                                 <constraint firstItem="p95-ga-PQU" firstAttribute="top" secondItem="iRi-l3-cqz" secondAttribute="top" id="TSN-kp-VHn"/>
                                 <constraint firstItem="r7a-ln-ilM" firstAttribute="top" secondItem="L3N-Yz-BKX" secondAttribute="bottom" constant="12" id="Tl6-aF-W4h"/>
                                 <constraint firstItem="p95-ga-PQU" firstAttribute="leading" secondItem="iRi-l3-cqz" secondAttribute="leading" id="WHE-Pp-pnR"/>
                                 <constraint firstItem="cvi-ff-FNU" firstAttribute="top" secondItem="p95-ga-PQU" secondAttribute="bottom" constant="3" id="aU9-BE-h4k"/>
+                                <constraint firstItem="6kM-h6-jNV" firstAttribute="height" secondItem="hNb-bP-bop" secondAttribute="height" id="eFD-mR-XSg"/>
                                 <constraint firstItem="XOA-s4-reM" firstAttribute="top" secondItem="p95-ga-PQU" secondAttribute="bottom" constant="8" id="lWo-jg-Mdl"/>
+                                <constraint firstItem="hNb-bP-bop" firstAttribute="leading" secondItem="iRi-l3-cqz" secondAttribute="leading" constant="16" id="sfS-nz-RKG"/>
                                 <constraint firstItem="r7a-ln-ilM" firstAttribute="leading" secondItem="iRi-l3-cqz" secondAttribute="leading" constant="16" id="soa-i5-MTk"/>
                                 <constraint firstItem="cvi-ff-FNU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XOA-s4-reM" secondAttribute="trailing" constant="5" id="tHT-eX-Ou4"/>
                                 <constraint firstItem="L3N-Yz-BKX" firstAttribute="top" secondItem="XOA-s4-reM" secondAttribute="bottom" constant="12" id="wgA-71-AZ0"/>
+                                <constraint firstAttribute="trailing" secondItem="Hld-bF-cBW" secondAttribute="trailing" constant="16" id="xRi-Qt-1eP"/>
                                 <constraint firstAttribute="trailing" secondItem="p95-ga-PQU" secondAttribute="trailing" id="xfJ-yP-VNH"/>
                             </constraints>
                         </view>
@@ -127,6 +159,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

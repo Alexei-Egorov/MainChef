@@ -2,8 +2,8 @@ import UIKit
 
 class DishCell: UICollectionViewCell {
 
-    @IBOutlet weak var dishImage: UIImageView!
     @IBOutlet weak var dishNameLabel: UILabel!
+    @IBOutlet weak var dishImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -13,4 +13,8 @@ class DishCell: UICollectionViewCell {
         dishImage.layer.masksToBounds = true
     }
 
+    func setupCell(with model: RecipeModel) {
+        dishNameLabel.text = model.name
+        dishImage.image = model.photo
+    }
 }
