@@ -2,6 +2,8 @@ import Foundation
 
 class CommonResources {
     
+    var isUserLoggedIn = false
+    
     let ingredients = ["Chicken",
                        "Pasta",
                        "Potatoes",

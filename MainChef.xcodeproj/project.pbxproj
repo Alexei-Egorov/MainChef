@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		3D2B34A6167CDF3D52045591 /* Pods_MainChef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9921F66C2AFBECF8A2A64F /* Pods_MainChef.framework */; };
+		933D0CDC28BE221E00DD09B1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CDB28BE221E00DD09B1 /* UserModel.swift */; };
+		933D0CDE28BE232E00DD09B1 /* CookbookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CDD28BE232E00DD09B1 /* CookbookModel.swift */; };
+		933D0CE028BE2B1E00DD09B1 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CDF28BE2B1E00DD09B1 /* UserRealm.swift */; };
+		933D0CE228BE2C3A00DD09B1 /* CookbookRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CE128BE2C3A00DD09B1 /* CookbookRealm.swift */; };
+		933D0CEB28BE495F00DD09B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CE928BE495F00DD09B1 /* LoginViewController.swift */; };
+		933D0CEC28BE495F00DD09B1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933D0CEA28BE495F00DD09B1 /* LoginViewController.xib */; };
+		933D0CEE28BE497100DD09B1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CED28BE497100DD09B1 /* LoginViewModel.swift */; };
+		933D0CF228BE4CBA00DD09B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CF028BE4CBA00DD09B1 /* RegisterViewController.swift */; };
+		933D0CF328BE4CBA00DD09B1 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933D0CF128BE4CBA00DD09B1 /* RegisterViewController.xib */; };
+		933D0CF528BE4CCD00DD09B1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CF428BE4CCD00DD09B1 /* RegisterViewModel.swift */; };
+		933D0CF828BE4D4500DD09B1 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CF728BE4D4500DD09B1 /* LoginNavigationController.swift */; };
+		933D0CFA28BE4D5600DD09B1 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CF928BE4D5600DD09B1 /* MainNavigationController.swift */; };
+		933D0CFC28BE538C00DD09B1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CFB28BE538C00DD09B1 /* RootViewController.swift */; };
+		933D0CFE28BE544500DD09B1 /* AppDelegate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D0CFD28BE544500DD09B1 /* AppDelegate + Ext.swift */; };
+		934CFE3028BF973A00D848D1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934CFE2E28BF973A00D848D1 /* SplashScreenViewController.swift */; };
+		934CFE3128BF973A00D848D1 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 934CFE2F28BF973A00D848D1 /* SplashScreenViewController.xib */; };
 		93A91E23277B326800D28085 /* SelectedIngredentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A91E21277B326800D28085 /* SelectedIngredentCell.swift */; };
 		93A91E24277B326800D28085 /* SelectedIngredentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A91E22277B326800D28085 /* SelectedIngredentCell.xib */; };
 		A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */; };
@@ -57,6 +73,22 @@
 /* Begin PBXFileReference section */
 		0D86E1D2DDF7BF7BCEEC3690 /* Pods-MainChef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainChef.debug.xcconfig"; path = "Target Support Files/Pods-MainChef/Pods-MainChef.debug.xcconfig"; sourceTree = "<group>"; };
 		6F01B75C9FBDA75DBB3088C1 /* Pods-MainChef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainChef.release.xcconfig"; path = "Target Support Files/Pods-MainChef/Pods-MainChef.release.xcconfig"; sourceTree = "<group>"; };
+		933D0CDB28BE221E00DD09B1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		933D0CDD28BE232E00DD09B1 /* CookbookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookModel.swift; sourceTree = "<group>"; };
+		933D0CDF28BE2B1E00DD09B1 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		933D0CE128BE2C3A00DD09B1 /* CookbookRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookRealm.swift; sourceTree = "<group>"; };
+		933D0CE928BE495F00DD09B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		933D0CEA28BE495F00DD09B1 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		933D0CED28BE497100DD09B1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		933D0CF028BE4CBA00DD09B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		933D0CF128BE4CBA00DD09B1 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		933D0CF428BE4CCD00DD09B1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		933D0CF728BE4D4500DD09B1 /* LoginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
+		933D0CF928BE4D5600DD09B1 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		933D0CFB28BE538C00DD09B1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		933D0CFD28BE544500DD09B1 /* AppDelegate + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + Ext.swift"; sourceTree = "<group>"; };
+		934CFE2E28BF973A00D848D1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		934CFE2F28BF973A00D848D1 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		93A91E21277B326800D28085 /* SelectedIngredentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIngredentCell.swift; sourceTree = "<group>"; };
 		93A91E22277B326800D28085 /* SelectedIngredentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedIngredentCell.xib; sourceTree = "<group>"; };
 		A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
@@ -135,6 +167,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		933D0CE528BE48D200DD09B1 /* RecipeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A2B421B827D4EA7C000FB9CE /* RecipeDetailsViewController.swift */,
+				A2B421B927D4EA7C000FB9CE /* RecipeDetailsViewController.xib */,
+				A2B67D9D28BBCC4500679CB6 /* RecipeDetailsViewModel.swift */,
+			);
+			path = RecipeDetails;
+			sourceTree = "<group>";
+		};
+		933D0CE628BE48DC00DD09B1 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				933D0CE928BE495F00DD09B1 /* LoginViewController.swift */,
+				933D0CEA28BE495F00DD09B1 /* LoginViewController.xib */,
+				933D0CED28BE497100DD09B1 /* LoginViewModel.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		933D0CEF28BE4CA500DD09B1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				933D0CF028BE4CBA00DD09B1 /* RegisterViewController.swift */,
+				933D0CF128BE4CBA00DD09B1 /* RegisterViewController.xib */,
+				933D0CF428BE4CCD00DD09B1 /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		933D0CF628BE4D1800DD09B1 /* Navigation Scene */ = {
+			isa = PBXGroup;
+			children = (
+				933D0CFB28BE538C00DD09B1 /* RootViewController.swift */,
+				933D0CF728BE4D4500DD09B1 /* LoginNavigationController.swift */,
+				933D0CF928BE4D5600DD09B1 /* MainNavigationController.swift */,
+			);
+			path = "Navigation Scene";
+			sourceTree = "<group>";
+		};
+		934CFE2D28BF971F00D848D1 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				934CFE2E28BF973A00D848D1 /* SplashScreenViewController.swift */,
+				934CFE2F28BF973A00D848D1 /* SplashScreenViewController.xib */,
+			);
+			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
 		A203162D27C06D91002BB225 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +224,7 @@
 				A220793A28A444FD000632FB /* UIViewController + Ext.swift */,
 				A2CDE3AB28B94840001D2425 /* String + Ext.swift */,
 				A2CDE3B028B96184001D2425 /* Array + Ext.swift */,
+				933D0CFD28BE544500DD09B1 /* AppDelegate + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,6 +244,8 @@
 			children = (
 				A265BD5928B140A700D9590E /* RecipeRealm.swift */,
 				A2CDE3AD28B9599B001D2425 /* IngredientRealm.swift */,
+				933D0CDF28BE2B1E00DD09B1 /* UserRealm.swift */,
+				933D0CE128BE2C3A00DD09B1 /* CookbookRealm.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -199,6 +283,8 @@
 			children = (
 				A2890DA928B037DB003ECD49 /* RecipeModel.swift */,
 				A2CDE3A928B929EC001D2425 /* IngredientModel.swift */,
+				933D0CDB28BE221E00DD09B1 /* UserModel.swift */,
+				933D0CDD28BE232E00DD09B1 /* CookbookModel.swift */,
 				A2890DAB28B03C31003ECD49 /* CommonResources.swift */,
 			);
 			path = Model;
@@ -215,9 +301,11 @@
 		A2B421B727D4EA4B000FB9CE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A2B421B827D4EA7C000FB9CE /* RecipeDetailsViewController.swift */,
-				A2B421B927D4EA7C000FB9CE /* RecipeDetailsViewController.xib */,
-				A2B67D9D28BBCC4500679CB6 /* RecipeDetailsViewModel.swift */,
+				934CFE2D28BF971F00D848D1 /* Splash Screen */,
+				933D0CF628BE4D1800DD09B1 /* Navigation Scene */,
+				933D0CE628BE48DC00DD09B1 /* LogIn */,
+				933D0CEF28BE4CA500DD09B1 /* Register */,
+				933D0CE528BE48D200DD09B1 /* RecipeDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -297,7 +385,6 @@
 		A2FC628A272892AB00EB3BCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A2B421B727D4EA4B000FB9CE /* Scenes */,
 				A2B7FC8427D3FD4D006B1663 /* CollectionViews */,
 				A2B7FC8327D3FCEC006B1663 /* TableViews */,
 				A295D66928AA8D37008746E4 /* Custom Implementations */,
@@ -330,6 +417,7 @@
 				A2890DA728B037B2003ECD49 /* Data */,
 				A203162D27C06D91002BB225 /* Extensions */,
 				A226012627D50BCA00E0F96F /* Support */,
+				A2B421B727D4EA4B000FB9CE /* Scenes */,
 				A2FC628A272892AB00EB3BCE /* Views */,
 				A2FC627C2728297E00EB3BCE /* ViewControllers */,
 				A2FC62792728293900EB3BCE /* Storyboards */,
@@ -407,15 +495,18 @@
 				A2FC62922728B9C800EB3BCE /* FoodCell.xib in Resources */,
 				A2B421BB27D4EA7C000FB9CE /* RecipeDetailsViewController.xib in Resources */,
 				E147A08F2159176400AD9178 /* LaunchScreen.storyboard in Resources */,
+				933D0CEC28BE495F00DD09B1 /* LoginViewController.xib in Resources */,
 				A2FC628627282B6100EB3BCE /* Cookbook.storyboard in Resources */,
 				A2FC628E272892D500EB3BCE /* DishCell.xib in Resources */,
 				A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */,
 				A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */,
+				934CFE3128BF973A00D848D1 /* SplashScreenViewController.xib in Resources */,
 				A2A6422727C4127500E025F7 /* RecipeStageCell.xib in Resources */,
 				93A91E24277B326800D28085 /* SelectedIngredentCell.xib in Resources */,
 				A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */,
 				A2FC628827282B9200EB3BCE /* Grocery.storyboard in Resources */,
 				E147A08C2159176300AD9178 /* Assets.xcassets in Resources */,
+				933D0CF328BE4CBA00DD09B1 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +559,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D0CEB28BE495F00DD09B1 /* LoginViewController.swift in Sources */,
+				933D0CE028BE2B1E00DD09B1 /* UserRealm.swift in Sources */,
 				A2CDE3AC28B94840001D2425 /* String + Ext.swift in Sources */,
 				A2B67D9E28BBCC4500679CB6 /* RecipeDetailsViewModel.swift in Sources */,
 				A2FC6280272829AD00EB3BCE /* SearchViewController.swift in Sources */,
@@ -488,13 +581,24 @@
 				A2A6422627C4127500E025F7 /* RecipeStageCell.swift in Sources */,
 				A295D66B28AA8D5D008746E4 /* IngredientTextField.swift in Sources */,
 				A286535528BA88D1008B345C /* SearchViewModel.swift in Sources */,
+				933D0CF228BE4CBA00DD09B1 /* RegisterViewController.swift in Sources */,
+				933D0CFA28BE4D5600DD09B1 /* MainNavigationController.swift in Sources */,
+				933D0CDC28BE221E00DD09B1 /* UserModel.swift in Sources */,
+				933D0CE228BE2C3A00DD09B1 /* CookbookRealm.swift in Sources */,
 				93A91E23277B326800D28085 /* SelectedIngredentCell.swift in Sources */,
+				933D0CDE28BE232E00DD09B1 /* CookbookModel.swift in Sources */,
 				A2CDE3AE28B9599B001D2425 /* IngredientRealm.swift in Sources */,
 				A226012827D50C1700E0F96F /* HeaderBackgoundView.swift in Sources */,
+				933D0CEE28BE497100DD09B1 /* LoginViewModel.swift in Sources */,
+				933D0CF828BE4D4500DD09B1 /* LoginNavigationController.swift in Sources */,
 				A2FC628D272892D500EB3BCE /* DishCell.swift in Sources */,
 				A265BD5A28B140A700D9590E /* RecipeRealm.swift in Sources */,
+				933D0CFE28BE544500DD09B1 /* AppDelegate + Ext.swift in Sources */,
 				A2890DAA28B037DB003ECD49 /* RecipeModel.swift in Sources */,
+				933D0CF528BE4CCD00DD09B1 /* RegisterViewModel.swift in Sources */,
 				A2CDE3AA28B929EC001D2425 /* IngredientModel.swift in Sources */,
+				934CFE3028BF973A00D848D1 /* SplashScreenViewController.swift in Sources */,
+				933D0CFC28BE538C00DD09B1 /* RootViewController.swift in Sources */,
 				A265BD5728B1183F00D9590E /* RecipesRepository.swift in Sources */,
 				A220793B28A444FD000632FB /* UIViewController + Ext.swift in Sources */,
 				E147A0852159176200AD9178 /* AppDelegate.swift in Sources */,
