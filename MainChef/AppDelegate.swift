@@ -7,18 +7,21 @@
 import UIKit
 import CoreData
 import RealmSwift
-import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let tabController = UITabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.rootViewController = SplashScreenViewController()
+        if #available(iOS 13, *) { } else {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let rootViewController = RootViewController(currentView: SplashScreenViewController())
+            self.window!.rootViewController = rootViewController
+            self.window!.makeKeyAndVisible()
+        }
+        
         
         do {
             _ = try Realm()
@@ -29,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         return true
+    }
+    
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

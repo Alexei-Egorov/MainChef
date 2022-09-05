@@ -27,7 +27,7 @@ class GroceryViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "FoodCell")
-
+        
         setupView()
     }
     

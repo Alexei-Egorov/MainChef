@@ -13,7 +13,6 @@ extension RootNavigationInterface {
 class RootViewController: UIViewController {
     
     var currentViewController: UIViewController!
-    
     convenience init(currentView: UIViewController) {
         self.init()
         self.currentViewController = currentView

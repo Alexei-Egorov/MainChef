@@ -64,8 +64,6 @@ class RecipeDetailsViewController: UIViewController {
             let serial = i < middle ? i : i - middle
             y += (Int(labelSize.height) + 2) * serial
             
-            print("jopta height: \(labelSize.height)")
-            
             label.frame = CGRect(x: 6, y: y, width: Int(labelSize.width)+1, height: Int(labelSize.height))
             targetView?.addSubview(label)
         }

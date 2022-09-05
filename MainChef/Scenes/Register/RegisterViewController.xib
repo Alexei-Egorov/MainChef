@@ -8,9 +8,19 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="MainChef" customModuleProvider="target">
             <connections>
+                <outlet property="createPasswordTextField" destination="Bff-8y-qFb" id="Z90-oH-jNh"/>
+                <outlet property="emailTextField" destination="bHF-xa-tMW" id="94Q-5D-9et"/>
+                <outlet property="registerButton" destination="VPB-IN-cLd" id="3ka-82-C9q"/>
+                <outlet property="repeatPasswordTextField" destination="HQl-WD-JCa" id="xEM-4x-MQk"/>
+                <outlet property="usernameTextField" destination="1eT-ni-BiH" id="q1d-h6-EzX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +28,81 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gnm-Xb-GGe">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0a-Sq-ezO" userLabel="Content View">
+                    <rect key="frame" x="50" y="327.5" width="314" height="241.5"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eT-ni-BiH" userLabel="Username Text Field">
+                            <rect key="frame" x="10" y="10" width="294" height="34"/>
+                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHF-xa-tMW" userLabel="Email Text Field">
+                            <rect key="frame" x="10" y="54" width="294" height="34"/>
+                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="create password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-8y-qFb" userLabel="Create Password Text Field">
+                            <rect key="frame" x="10" y="98" width="294" height="34"/>
+                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQl-WD-JCa" userLabel="Repeat Password Text Field">
+                            <rect key="frame" x="10" y="142" width="294" height="34"/>
+                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPB-IN-cLd" userLabel="Register Button">
+                            <rect key="frame" x="94" y="196" width="126" height="35.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Register">
+                                <fontDescription key="titleFontDescription" name="SFPro-Bold" family="SF Pro" pointSize="18"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="Zdi-Ro-0AG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Bff-8y-qFb" firstAttribute="top" secondItem="bHF-xa-tMW" secondAttribute="bottom" constant="10" id="Aeh-kk-gXb"/>
+                        <constraint firstItem="1eT-ni-BiH" firstAttribute="leading" secondItem="v0a-Sq-ezO" secondAttribute="leading" constant="10" id="FBW-K8-FYH"/>
+                        <constraint firstAttribute="bottom" secondItem="VPB-IN-cLd" secondAttribute="bottom" constant="10" id="IUi-5j-Zwd"/>
+                        <constraint firstItem="Bff-8y-qFb" firstAttribute="leading" secondItem="v0a-Sq-ezO" secondAttribute="leading" constant="10" id="IrR-ET-ppt"/>
+                        <constraint firstItem="HQl-WD-JCa" firstAttribute="leading" secondItem="v0a-Sq-ezO" secondAttribute="leading" constant="10" id="QOd-g5-OgM"/>
+                        <constraint firstAttribute="trailing" secondItem="bHF-xa-tMW" secondAttribute="trailing" constant="10" id="SCi-lg-ZDf"/>
+                        <constraint firstItem="VPB-IN-cLd" firstAttribute="width" secondItem="v0a-Sq-ezO" secondAttribute="width" multiplier="0.4" id="coA-bz-eaD"/>
+                        <constraint firstItem="bHF-xa-tMW" firstAttribute="top" secondItem="1eT-ni-BiH" secondAttribute="bottom" constant="10" id="hpu-lY-bla"/>
+                        <constraint firstItem="VPB-IN-cLd" firstAttribute="centerX" secondItem="v0a-Sq-ezO" secondAttribute="centerX" id="js4-Gt-F7X"/>
+                        <constraint firstAttribute="trailing" secondItem="HQl-WD-JCa" secondAttribute="trailing" constant="10" id="kkA-MD-wGW"/>
+                        <constraint firstItem="HQl-WD-JCa" firstAttribute="top" secondItem="Bff-8y-qFb" secondAttribute="bottom" constant="10" id="mvx-ZK-5IH"/>
+                        <constraint firstAttribute="trailing" secondItem="Bff-8y-qFb" secondAttribute="trailing" constant="10" id="nB1-rV-ufe"/>
+                        <constraint firstAttribute="trailing" secondItem="1eT-ni-BiH" secondAttribute="trailing" constant="10" id="rIQ-BU-cmO"/>
+                        <constraint firstItem="bHF-xa-tMW" firstAttribute="leading" secondItem="v0a-Sq-ezO" secondAttribute="leading" constant="10" id="sxH-43-qze"/>
+                        <constraint firstItem="1eT-ni-BiH" firstAttribute="top" secondItem="v0a-Sq-ezO" secondAttribute="top" constant="10" id="uBg-QU-Ux3"/>
+                        <constraint firstItem="VPB-IN-cLd" firstAttribute="top" secondItem="HQl-WD-JCa" secondAttribute="bottom" constant="20" id="w1b-5a-9aw"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="113"/>
+            <constraints>
+                <constraint firstItem="gnm-Xb-GGe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AhI-hG-1XY"/>
+                <constraint firstAttribute="bottom" secondItem="gnm-Xb-GGe" secondAttribute="bottom" id="JJj-b6-Sar"/>
+                <constraint firstItem="v0a-Sq-ezO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Lef-LJ-2A2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v0a-Sq-ezO" secondAttribute="trailing" constant="50" id="NNn-3d-eJG"/>
+                <constraint firstItem="gnm-Xb-GGe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UOd-ln-Uz2"/>
+                <constraint firstItem="v0a-Sq-ezO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="g90-AS-pwy"/>
+                <constraint firstAttribute="trailing" secondItem="gnm-Xb-GGe" secondAttribute="trailing" id="rNF-pp-js7"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
         </view>
     </objects>
     <resources>
+        <image name="cookingBackground" width="960" height="1440"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

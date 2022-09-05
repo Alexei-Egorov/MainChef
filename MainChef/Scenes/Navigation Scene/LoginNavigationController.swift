@@ -1,9 +1,13 @@
-//
-//  LoginNavigationController.swift
-//  MainChef
-//
-//  Created by Aliaksei Yahorau on 30/08/2022.
-//  Copyright © 2022 Gwinyai Nyatsoka. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class LoginNavigationViewController: AppNavigationViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let vc = LoginViewController()
+        show(vc, sender: nil)
+    }
+    
+    
+}

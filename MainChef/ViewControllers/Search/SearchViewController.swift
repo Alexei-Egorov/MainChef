@@ -31,6 +31,7 @@ class SearchViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "DishCell", bundle: nil), forCellWithReuseIdentifier: "DishCell")
         
+        setupNavigationBar()
         downloadRecipes()
 //        setupGradientLayer()
     }
@@ -40,6 +41,38 @@ class SearchViewController: UIViewController {
         arrangeIngredientBoxes(ingredients: viewModel.allIngredeints)
         contentSizeConstraint.constant = 600
     }
+    
+    private func setupNavigationBar() {
+        let searchLabel = UILabel()
+        searchLabel.text = "Search"
+        searchLabel.font = UIFont(name: "SFProText-Semibold", size: 20)
+        let leftItem = UIBarButtonItem(customView: searchLabel)
+        self.navigationItem.leftBarButtonItem = leftItem
+    }
+    
+//    private func setupNavigationBar() {
+//        let homeLabel = UILabel()
+//        homeLabel.text = UserSessionDefaults.getUserName()
+//        if RestService.shared.environmentType == .test { homeLabel.text! += "*" }
+//        homeLabel.font = R.font.montserratMedium(size: 22)
+//        let leftItem = UIBarButtonItem(customView: homeLabel)
+//        self.navigationItem.leftBarButtonItem = leftItem
+//        printerButton = setupNavigationButton(type: .printer(action: { [weak self] in self?.printerButtonTouchUp() }))
+//        let connectionButton = setupNavigationButton(type: .connection(action: { [weak self] in self?.connectionButtonTouchUp() }))
+//        let messageButton = setupNavigationButton(type: .message(action: { [weak self] in
+//            self?.messageButtonTouchUp()
+//        }))
+//        let settingsButton = setupNavigationButton(type: .settings(action: { [weak self] in self?.settingsButtonTouchUp() }))
+//        self.navigationItem.setRightBarButtonItems([settingsButton, messageButton, printerButton!, connectionButton], animated: false)
+//        navigationItem.rightBarButtonItems?[1].isEnabled = false
+//        viewModel.ticketsRelay.subscribe(onNext: { [weak self] tickets in
+//            for ticket in tickets {
+//                if ticket.phoneNumber != nil {
+//                    self?.navigationItem.rightBarButtonItems?[1].isEnabled = true
+//                }
+//            }
+//        }).disposed(by: disposeBag)
+//    }
     
     func arrangeSelectedIngredients() {
         let yIndent: CGFloat = 8
