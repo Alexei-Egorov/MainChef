@@ -10,7 +10,8 @@ final class MainNavigationViewController: AppNavigationViewController {
     }
     
     let spinnerVC = UIStoryboard(name: "Spinner", bundle: nil).instantiateViewController(identifier: "Spinner") as! SpinnerViewController
-    let searchVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(identifier: "Search") as! SearchViewController
+//    let searchVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(identifier: "Search") as! SearchViewController
+    let searchVC = SearchViewController()
     let cookbookVC = UIStoryboard(name: "Cookbook", bundle: nil).instantiateViewController(identifier: "Cookbook") as! CookbookViewController
     let groceryVC = UIStoryboard(name: "Grocery", bundle: nil).instantiateViewController(identifier: "Grocery") as! GroceryViewController
     

@@ -2,7 +2,7 @@ import Foundation
 
 class CommonResources {
     
-    var isUserLoggedIn = false
+    var isUserLoggedIn = true
     
     let ingredients = ["Chicken",
                        "Pasta",

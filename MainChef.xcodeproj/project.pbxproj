@@ -52,12 +52,13 @@
 		A2CDE3B128B96184001D2425 /* Array + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE3B028B96184001D2425 /* Array + Ext.swift */; };
 		A2CDE3B328B961B9001D2425 /* DomainConvertableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE3B228B961B9001D2425 /* DomainConvertableType.swift */; };
 		A2CDE3B528B962D4001D2425 /* RealmDataConvertableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE3B428B962D3001D2425 /* RealmDataConvertableType.swift */; };
+		A2CDE9A428C62BFE004638F2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CDE9A228C62BFE004638F2 /* SearchViewController.xib */; };
+		A2CDE9A628C635C8004638F2 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9A528C635C8004638F2 /* NibLoadable.swift */; };
 		A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */; };
 		A2E0208727C1744E0075604D /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2E0208627C1744E0075604D /* SF-Pro.ttf */; };
 		A2E274ED27BFFA9600525C15 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */; };
 		A2E274EF27BFFB5500525C15 /* CreateRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E274EE27BFFB5500525C15 /* CreateRecipeViewController.swift */; };
 		A2FC6277272828F800EB3BCE /* Spinner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC6276272828F800EB3BCE /* Spinner.storyboard */; };
-		A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC627A2728297A00EB3BCE /* Search.storyboard */; };
 		A2FC627E2728299600EB3BCE /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC627D2728299600EB3BCE /* SpinnerViewController.swift */; };
 		A2FC6280272829AD00EB3BCE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC627F272829AD00EB3BCE /* SearchViewController.swift */; };
 		A2FC628227282B2500EB3BCE /* CookbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC628127282B2500EB3BCE /* CookbookViewController.swift */; };
@@ -120,12 +121,13 @@
 		A2CDE3B028B96184001D2425 /* Array + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Ext.swift"; sourceTree = "<group>"; };
 		A2CDE3B228B961B9001D2425 /* DomainConvertableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertableType.swift; sourceTree = "<group>"; };
 		A2CDE3B428B962D3001D2425 /* RealmDataConvertableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataConvertableType.swift; sourceTree = "<group>"; };
+		A2CDE9A228C62BFE004638F2 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		A2CDE9A528C635C8004638F2 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		A2E0208627C1744E0075604D /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A2E274EE27BFFB5500525C15 /* CreateRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewController.swift; sourceTree = "<group>"; };
 		A2FC6276272828F800EB3BCE /* Spinner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Spinner.storyboard; sourceTree = "<group>"; };
-		A2FC627A2728297A00EB3BCE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A2FC627D2728299600EB3BCE /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		A2FC627F272829AD00EB3BCE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A2FC628127282B2500EB3BCE /* CookbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookViewController.swift; sourceTree = "<group>"; };
@@ -183,24 +185,24 @@
 			path = RecipeDetails;
 			sourceTree = "<group>";
 		};
-		933D0CE628BE48DC00DD09B1 /* LogIn */ = {
+		933D0CE628BE48DC00DD09B1 /* LogIn Scene */ = {
 			isa = PBXGroup;
 			children = (
 				933D0CE928BE495F00DD09B1 /* LoginViewController.swift */,
 				933D0CEA28BE495F00DD09B1 /* LoginViewController.xib */,
 				933D0CED28BE497100DD09B1 /* LoginViewModel.swift */,
 			);
-			path = LogIn;
+			path = "LogIn Scene";
 			sourceTree = "<group>";
 		};
-		933D0CEF28BE4CA500DD09B1 /* Register */ = {
+		933D0CEF28BE4CA500DD09B1 /* Register Scene */ = {
 			isa = PBXGroup;
 			children = (
 				933D0CF028BE4CBA00DD09B1 /* RegisterViewController.swift */,
 				933D0CF128BE4CBA00DD09B1 /* RegisterViewController.xib */,
 				933D0CF428BE4CCD00DD09B1 /* RegisterViewModel.swift */,
 			);
-			path = Register;
+			path = "Register Scene";
 			sourceTree = "<group>";
 		};
 		933D0CF628BE4D1800DD09B1 /* Navigation Scene */ = {
@@ -233,6 +235,7 @@
 				A2CDE3AB28B94840001D2425 /* String + Ext.swift */,
 				A2CDE3B028B96184001D2425 /* Array + Ext.swift */,
 				933D0CFD28BE544500DD09B1 /* AppDelegate + Ext.swift */,
+				A2CDE9A528C635C8004638F2 /* NibLoadable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,10 +312,11 @@
 		A2B421B727D4EA4B000FB9CE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A2CDE9A028C62BD8004638F2 /* Search Scene */,
 				934CFE2D28BF971F00D848D1 /* Splash Screen */,
 				933D0CF628BE4D1800DD09B1 /* Navigation Scene */,
-				933D0CE628BE48DC00DD09B1 /* LogIn */,
-				933D0CEF28BE4CA500DD09B1 /* Register */,
+				933D0CE628BE48DC00DD09B1 /* LogIn Scene */,
+				933D0CEF28BE4CA500DD09B1 /* Register Scene */,
 				933D0CE528BE48D200DD09B1 /* RecipeDetails */,
 			);
 			path = Scenes;
@@ -348,6 +352,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		A2CDE9A028C62BD8004638F2 /* Search Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A2CDE9A228C62BFE004638F2 /* SearchViewController.xib */,
+			);
+			path = "Search Scene";
+			sourceTree = "<group>";
+		};
 		A2DD75F6275FDCB500768178 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				A2FC6276272828F800EB3BCE /* Spinner.storyboard */,
-				A2FC627A2728297A00EB3BCE /* Search.storyboard */,
 				A2FC628527282B6100EB3BCE /* Cookbook.storyboard */,
 				A2FC628727282B9200EB3BCE /* Grocery.storyboard */,
 			);
@@ -508,11 +519,11 @@
 				A2FC628627282B6100EB3BCE /* Cookbook.storyboard in Resources */,
 				A2FC628E272892D500EB3BCE /* DishCell.xib in Resources */,
 				A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */,
-				A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */,
 				934CFE3128BF973A00D848D1 /* SplashScreenViewController.xib in Resources */,
 				A2A6422727C4127500E025F7 /* RecipeStageCell.xib in Resources */,
 				93A91E24277B326800D28085 /* SelectedIngredentCell.xib in Resources */,
 				A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */,
+				A2CDE9A428C62BFE004638F2 /* SearchViewController.xib in Resources */,
 				A2FC628827282B9200EB3BCE /* Grocery.storyboard in Resources */,
 				E147A08C2159176300AD9178 /* Assets.xcassets in Resources */,
 				933D0CF328BE4CBA00DD09B1 /* RegisterViewController.xib in Resources */,
@@ -585,6 +596,7 @@
 				A2FC628427282B3F00EB3BCE /* GroceryViewController.swift in Sources */,
 				A2FC62912728B9C800EB3BCE /* FoodCell.swift in Sources */,
 				A2A6422327C40A9400E025F7 /* UIView + Ext.swift in Sources */,
+				A2CDE9A628C635C8004638F2 /* NibLoadable.swift in Sources */,
 				A2A6422127C3F6F700E025F7 /* StagesViewController.swift in Sources */,
 				A2FC628227282B2500EB3BCE /* CookbookViewController.swift in Sources */,
 				A2B421BA27D4EA7C000FB9CE /* RecipeDetailsViewController.swift in Sources */,
