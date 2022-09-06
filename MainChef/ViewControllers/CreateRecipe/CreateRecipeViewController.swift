@@ -93,7 +93,6 @@ class CreateRecipeViewController: UIViewController {
             recipeDescriptionTextField.layer.borderColor = recipeDescriptionTextField.text!.isEmpty ? UIColor.red.cgColor : nil
             collectionView.layer.borderColor = selectedIngredients.isEmpty ? UIColor.red.cgColor : nil
         }
-        print("jopta returning validate value: \(ans)")
         return ans
     }
     
@@ -107,7 +106,6 @@ class CreateRecipeViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         guard validate() else { return }
-        print("jopta action after validate")
         guard let recipeTitle = recipeTitleTextField.text, let dishType = dishTypeTextField.text, let description = recipeDescriptionTextField.text else { return }
         let recipe = RecipeModel(id: UUID(), name: recipeTitle, photo: imageView.image, dishType: dishType, description: description, ingredients: selectedIngredients, stages: [])
         self.recipe = recipe

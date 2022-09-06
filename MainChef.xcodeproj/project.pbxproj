@@ -33,6 +33,18 @@
 		A2CDE3B128B96184001D2425 /* Array + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE3B028B96184001D2425 /* Array + Ext.swift */; };
 		A2CDE3B328B961B9001D2425 /* DomainConvertableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE3B228B961B9001D2425 /* DomainConvertableType.swift */; };
 		A2CDE3B528B962D4001D2425 /* RealmDataConvertableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE3B428B962D3001D2425 /* RealmDataConvertableType.swift */; };
+		A2CDE9A828C64853004638F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CDE9A728C64853004638F2 /* Login.storyboard */; };
+		A2CDE9AA28C6499D004638F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9A928C6499D004638F2 /* LoginViewController.swift */; };
+		A2CDE9AC28C649C1004638F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9AB28C649C1004638F2 /* RegisterViewController.swift */; };
+		A2CDE9AF28C654B0004638F2 /* CookbookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9AD28C654B0004638F2 /* CookbookModel.swift */; };
+		A2CDE9B028C654B0004638F2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9AE28C654B0004638F2 /* UserModel.swift */; };
+		A2CDE9B328C654D6004638F2 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9B128C654D6004638F2 /* UserRealm.swift */; };
+		A2CDE9B428C654D6004638F2 /* CookbookRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9B228C654D6004638F2 /* CookbookRealm.swift */; };
+		A2CDE9B628C6564E004638F2 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9B528C6564E004638F2 /* Helper.swift */; };
+		A2CDE9B828C65BA1004638F2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9B728C65BA1004638F2 /* UserRepository.swift */; };
+		A2CDE9BA28C6797C004638F2 /* CookbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9B928C6797C004638F2 /* CookbookViewModel.swift */; };
+		A2CDE9BE28C683A6004638F2 /* CookbookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDE9BC28C683A6004638F2 /* CookbookCell.swift */; };
+		A2CDE9BF28C683A6004638F2 /* CookbookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CDE9BD28C683A6004638F2 /* CookbookCell.xib */; };
 		A2DD75F9275FDD4700768178 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */; };
 		A2E0208727C1744E0075604D /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2E0208627C1744E0075604D /* SF-Pro.ttf */; };
 		A2E274ED27BFFA9600525C15 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */; };
@@ -82,6 +94,18 @@
 		A2CDE3B028B96184001D2425 /* Array + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Ext.swift"; sourceTree = "<group>"; };
 		A2CDE3B228B961B9001D2425 /* DomainConvertableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertableType.swift; sourceTree = "<group>"; };
 		A2CDE3B428B962D3001D2425 /* RealmDataConvertableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataConvertableType.swift; sourceTree = "<group>"; };
+		A2CDE9A728C64853004638F2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A2CDE9A928C6499D004638F2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2CDE9AB28C649C1004638F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A2CDE9AD28C654B0004638F2 /* CookbookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookbookModel.swift; sourceTree = "<group>"; };
+		A2CDE9AE28C654B0004638F2 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A2CDE9B128C654D6004638F2 /* UserRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		A2CDE9B228C654D6004638F2 /* CookbookRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookbookRealm.swift; sourceTree = "<group>"; };
+		A2CDE9B528C6564E004638F2 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		A2CDE9B728C65BA1004638F2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		A2CDE9B928C6797C004638F2 /* CookbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookViewModel.swift; sourceTree = "<group>"; };
+		A2CDE9BC28C683A6004638F2 /* CookbookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookCell.swift; sourceTree = "<group>"; };
+		A2CDE9BD28C683A6004638F2 /* CookbookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CookbookCell.xib; sourceTree = "<group>"; };
 		A2DD75F8275FDD2700768178 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		A2E0208627C1744E0075604D /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +177,7 @@
 				A226012727D50C1700E0F96F /* HeaderBackgoundView.swift */,
 				A2CDE3B228B961B9001D2425 /* DomainConvertableType.swift */,
 				A2CDE3B428B962D3001D2425 /* RealmDataConvertableType.swift */,
+				A2CDE9B528C6564E004638F2 /* Helper.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -162,6 +187,8 @@
 			children = (
 				A265BD5928B140A700D9590E /* RecipeRealm.swift */,
 				A2CDE3AD28B9599B001D2425 /* IngredientRealm.swift */,
+				A2CDE9B228C654D6004638F2 /* CookbookRealm.swift */,
+				A2CDE9B128C654D6004638F2 /* UserRealm.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -199,6 +226,8 @@
 			children = (
 				A2890DA928B037DB003ECD49 /* RecipeModel.swift */,
 				A2CDE3A928B929EC001D2425 /* IngredientModel.swift */,
+				A2CDE9AD28C654B0004638F2 /* CookbookModel.swift */,
+				A2CDE9AE28C654B0004638F2 /* UserModel.swift */,
 				A2890DAB28B03C31003ECD49 /* CommonResources.swift */,
 			);
 			path = Model;
@@ -240,6 +269,8 @@
 				A2FC628C272892D500EB3BCE /* DishCell.xib */,
 				93A91E21277B326800D28085 /* SelectedIngredentCell.swift */,
 				93A91E22277B326800D28085 /* SelectedIngredentCell.xib */,
+				A2CDE9BC28C683A6004638F2 /* CookbookCell.swift */,
+				A2CDE9BD28C683A6004638F2 /* CookbookCell.xib */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -248,8 +279,18 @@
 			isa = PBXGroup;
 			children = (
 				A265BD5628B1183F00D9590E /* RecipesRepository.swift */,
+				A2CDE9B728C65BA1004638F2 /* UserRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A2CDE9BB28C67982004638F2 /* Cookbook */ = {
+			isa = PBXGroup;
+			children = (
+				A2FC628127282B2500EB3BCE /* CookbookViewController.swift */,
+				A2CDE9B928C6797C004638F2 /* CookbookViewModel.swift */,
+			);
+			path = Cookbook;
 			sourceTree = "<group>";
 		};
 		A2DD75F6275FDCB500768178 /* Resources */ = {
@@ -277,6 +318,7 @@
 				A2FC627A2728297A00EB3BCE /* Search.storyboard */,
 				A2FC628527282B6100EB3BCE /* Cookbook.storyboard */,
 				A2FC628727282B9200EB3BCE /* Grocery.storyboard */,
+				A2CDE9A728C64853004638F2 /* Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -286,9 +328,11 @@
 			children = (
 				A2FC627D2728299600EB3BCE /* SpinnerViewController.swift */,
 				A286535328BA88BD008B345C /* Search */,
-				A2FC628127282B2500EB3BCE /* CookbookViewController.swift */,
+				A2CDE9BB28C67982004638F2 /* Cookbook */,
 				A2FC628327282B3F00EB3BCE /* GroceryViewController.swift */,
 				A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */,
+				A2CDE9A928C6499D004638F2 /* LoginViewController.swift */,
+				A2CDE9AB28C649C1004638F2 /* RegisterViewController.swift */,
 				A28160F928B29621002F2CF0 /* CreateRecipe */,
 			);
 			path = ViewControllers;
@@ -410,6 +454,8 @@
 				A2FC628627282B6100EB3BCE /* Cookbook.storyboard in Resources */,
 				A2FC628E272892D500EB3BCE /* DishCell.xib in Resources */,
 				A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */,
+				A2CDE9BF28C683A6004638F2 /* CookbookCell.xib in Resources */,
+				A2CDE9A828C64853004638F2 /* Login.storyboard in Resources */,
 				A2FC627B2728297A00EB3BCE /* Search.storyboard in Resources */,
 				A2A6422727C4127500E025F7 /* RecipeStageCell.xib in Resources */,
 				93A91E24277B326800D28085 /* SelectedIngredentCell.xib in Resources */,
@@ -473,20 +519,28 @@
 				A2FC6280272829AD00EB3BCE /* SearchViewController.swift in Sources */,
 				A2890DAC28B03C31003ECD49 /* CommonResources.swift in Sources */,
 				A203162F27C06DCD002BB225 /* UITextField + Ext.swift in Sources */,
+				A2CDE9B328C654D6004638F2 /* UserRealm.swift in Sources */,
+				A2CDE9B428C654D6004638F2 /* CookbookRealm.swift in Sources */,
 				A2E274EF27BFFB5500525C15 /* CreateRecipeViewController.swift in Sources */,
 				A2E274ED27BFFA9600525C15 /* ProfileViewController.swift in Sources */,
 				A2FC627E2728299600EB3BCE /* SpinnerViewController.swift in Sources */,
+				A2CDE9B028C654B0004638F2 /* UserModel.swift in Sources */,
 				A2CDE3B528B962D4001D2425 /* RealmDataConvertableType.swift in Sources */,
+				A2CDE9AF28C654B0004638F2 /* CookbookModel.swift in Sources */,
 				A2CDE3B328B961B9001D2425 /* DomainConvertableType.swift in Sources */,
+				A2CDE9BA28C6797C004638F2 /* CookbookViewModel.swift in Sources */,
 				A2CDE3B128B96184001D2425 /* Array + Ext.swift in Sources */,
 				A2FC628427282B3F00EB3BCE /* GroceryViewController.swift in Sources */,
 				A2FC62912728B9C800EB3BCE /* FoodCell.swift in Sources */,
+				A2CDE9AA28C6499D004638F2 /* LoginViewController.swift in Sources */,
 				A2A6422327C40A9400E025F7 /* UIView + Ext.swift in Sources */,
+				A2CDE9BE28C683A6004638F2 /* CookbookCell.swift in Sources */,
 				A2A6422127C3F6F700E025F7 /* StagesViewController.swift in Sources */,
 				A2FC628227282B2500EB3BCE /* CookbookViewController.swift in Sources */,
 				A2B421BA27D4EA7C000FB9CE /* RecipeDetailsViewController.swift in Sources */,
 				A2A6422627C4127500E025F7 /* RecipeStageCell.swift in Sources */,
 				A295D66B28AA8D5D008746E4 /* IngredientTextField.swift in Sources */,
+				A2CDE9B628C6564E004638F2 /* Helper.swift in Sources */,
 				A286535528BA88D1008B345C /* SearchViewModel.swift in Sources */,
 				93A91E23277B326800D28085 /* SelectedIngredentCell.swift in Sources */,
 				A2CDE3AE28B9599B001D2425 /* IngredientRealm.swift in Sources */,
@@ -494,9 +548,11 @@
 				A2FC628D272892D500EB3BCE /* DishCell.swift in Sources */,
 				A265BD5A28B140A700D9590E /* RecipeRealm.swift in Sources */,
 				A2890DAA28B037DB003ECD49 /* RecipeModel.swift in Sources */,
+				A2CDE9AC28C649C1004638F2 /* RegisterViewController.swift in Sources */,
 				A2CDE3AA28B929EC001D2425 /* IngredientModel.swift in Sources */,
 				A265BD5728B1183F00D9590E /* RecipesRepository.swift in Sources */,
 				A220793B28A444FD000632FB /* UIViewController + Ext.swift in Sources */,
+				A2CDE9B828C65BA1004638F2 /* UserRepository.swift in Sources */,
 				E147A0852159176200AD9178 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

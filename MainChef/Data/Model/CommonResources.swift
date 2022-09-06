@@ -2,6 +2,9 @@ import Foundation
 
 class CommonResources {
     
+    var isUserLoggedIn = true
+    var logedInUser: UserModel!
+    
     let ingredients = ["Chicken",
                        "Pasta",
                        "Potatoes",
