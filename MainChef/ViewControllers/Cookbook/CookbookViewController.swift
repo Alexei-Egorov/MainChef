@@ -29,6 +29,11 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
         gradientLayer.frame = headerView.bounds
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        cookbooksCollectionView.reloadData()
+        dishesCollectionView.reloadData()
+    }
+    
     func setupGradientLayer() {
         
         gradientLayer.colors = [UIColor(red: 255/255, green: 78/255, blue: 80/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 212/255, blue: 35/255, alpha: 1.0).cgColor]
@@ -46,7 +51,6 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            print("jopta cookbooks count: \(viewModel.usersCookbooks.count)")
             return viewModel.usersCookbooks.count + 1
         } else {
             return viewModel.selectedCookBook?.recipesIds.count ?? 0
@@ -77,26 +81,19 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
             if indexPath.row == viewModel.usersCookbooks.count {
                 let popupController = UIAlertController(title: "New cookbook", message: "Provide the name of the new cookbook", preferredStyle: .alert)
                 popupController.addTextField()
-                
                 popupController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-                
                 popupController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
                     let providedName = popupController.textFields![0].text!
                     guard !providedName.isEmpty else { return }
                     self?.viewModel.createCookbook(name: providedName)
                     self?.cookbooksCollectionView.reloadData()
                 }))
-                
                 self.present(popupController, animated: true, completion: nil)
-//                var altMessage = UIAlertController(title: "Warning", message: "This is Alert Message", preferredStyle: UIAlertControllerStyle.Alert)
-//                altMessage.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(altMessage, animated: true, completion: nil)
             } else {
                 viewModel.selectedCookBook = viewModel.usersCookbooks[indexPath.row]
                 viewModel.loadCookbookRecipes()
+                dishesCollectionView.reloadData()
             }
-            
-            collectionView.reloadData()
         } else {
             let detailsVC = RecipeDetailsViewController(viewModel: RecipeDetailsViewModel(recipe: viewModel.recipesToShow[indexPath.row]))
             show(detailsVC, sender: nil)

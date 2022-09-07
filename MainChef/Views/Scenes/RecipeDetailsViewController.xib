@@ -20,6 +20,7 @@
                 <outlet property="authorNameLabel" destination="XOA-s4-reM" id="r74-sf-M2Q"/>
                 <outlet property="descriptionLabel" destination="L3N-Yz-BKX" id="FkC-ee-id3"/>
                 <outlet property="durationLabel" destination="1EY-qA-Tqs" id="vkR-kK-WD0"/>
+                <outlet property="favouriteButton" destination="gsc-0c-IkY" id="CKy-K9-6Up"/>
                 <outlet property="imageView" destination="p95-ga-PQU" id="0eY-JH-11C"/>
                 <outlet property="leftIngredientsView" destination="hNb-bP-bop" id="T7o-Na-IK3"/>
                 <outlet property="leftIngredientsViewHeightConstraint" destination="PPe-iG-3vl" id="suY-gJ-oj1"/>
@@ -60,6 +61,9 @@
                                     <color key="tintColor" name="StandardGray"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Add to Grocery􀍩"/>
+                                    <connections>
+                                        <action selector="addToGroceryTapped:" destination="-1" eventType="touchUpInside" id="XN1-Uv-4HV"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="􀐱 30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EY-qA-Tqs">
                                     <rect key="frame" x="341.5" y="208" width="64.5" height="17"/>
@@ -98,6 +102,15 @@
                                     <rect key="frame" x="207" y="388.5" width="191" height="128"/>
                                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-0c-IkY">
+                                    <rect key="frame" x="365" y="8" width="41" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="􀋂"/>
+                                    <connections>
+                                        <action selector="starButtonTapped:" destination="-1" eventType="touchUpInside" id="aiX-ma-d05"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>

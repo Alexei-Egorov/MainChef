@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
             CommonResources.shared.setUser()
             Helper.login()
         } else {
-            print("jopta didn't find any user")
             return
         }
     }

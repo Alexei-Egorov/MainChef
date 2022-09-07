@@ -9,6 +9,7 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var leftIngredientsView: UIView!
     @IBOutlet weak var rightIngredientsView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var favouriteButton: UIButton!
     
     @IBOutlet weak var leftIngredientsViewHeightConstraint: NSLayoutConstraint!
     
@@ -70,6 +71,15 @@ class RecipeDetailsViewController: UIViewController {
         leftIngredientsViewHeightConstraint.constant = CGFloat(viewHeight)
     }
 
+    @IBAction func addToGroceryTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func starButtonTapped(_ sender: UIButton) {
+        favouriteButton.isEnabled = false
+        let favouriteCookbook = CommonResources.shared.logedInUser.cookbooks.first(where: {$0.name == "Favourite"})!
+        favouriteCookbook.recipesIds.append(viewModel.recipe.id)
+        CommonResources.shared.updateUser()
+    }
     
 }
 

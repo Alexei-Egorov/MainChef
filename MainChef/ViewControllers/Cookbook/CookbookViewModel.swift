@@ -21,10 +21,9 @@ class CookbookViewModel {
     }
     
     func createCookbook(name: String) {
-        print("jopta creating new cookbook with name: \(name)")
         let newCookbook = CookbookModel(name: name, recipesIds: [])
         CommonResources.shared.logedInUser.cookbooks.append(newCookbook)
         updateUsersCookbooks()
-        userRepository.updateUserInformation()
+        CommonResources.shared.updateUser()
     }
 }

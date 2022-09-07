@@ -11,6 +11,10 @@ class UserRealm: Object {
     @objc dynamic var photo: NSData = NSData()
     var cookbooks = List<CookbookRealm>()
     var shoppingList = List<IngredientRealm>()
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 extension UserRealm: DomainConvertableType {

@@ -31,13 +31,3 @@ class RecipesRepository {
         return loadedRecipes
     }
 }
-
-
-//public func getUser(email: String) -> UserModel? {
-//    let users = realm.objects(UserRealm.self)
-//    print("jopta list of all users: \(users)")
-//    if let foundUser = users.first(where: { $0.email == email }) {
-//        return foundUser.asDomain()
-//    }
-//    return nil
-//}

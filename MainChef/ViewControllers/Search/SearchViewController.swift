@@ -35,6 +35,10 @@ class SearchViewController: UIViewController {
 //        setupGradientLayer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         arrangeIngredientBoxes(ingredients: viewModel.allIngredeints)

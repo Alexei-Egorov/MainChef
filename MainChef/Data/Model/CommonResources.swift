@@ -48,4 +48,8 @@ class CommonResources {
         userDefaultsRepository.saveUser(user: logedInUser)
     }
     
+    func updateUser() {
+        userRepository.updateUserInformation(user: logedInUser)
+    }
+    
 }
