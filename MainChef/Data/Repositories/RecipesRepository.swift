@@ -22,8 +22,8 @@ class RecipesRepository {
     
     public func loadCookbookRecipes(cookBook: CookbookModel) -> [RecipeModel] {
         var loadedRecipes = [RecipeModel]()
+        let allRecipes = loadRecipes()
         cookBook.recipesIds.forEach { recipeId in
-            let allRecipes = loadedRecipes
             if let foundedRecipe = allRecipes.first(where: {$0.id == recipeId}) {
                 loadedRecipes.append(foundedRecipe)
             }

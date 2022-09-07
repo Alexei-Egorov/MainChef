@@ -22,15 +22,17 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         let username = usernameTextField.text!
-        let email = usernameTextField.text!
+        let email = emailTextField.text!
         let createdPassword = createPasswordTextField.text!
         let repeatedPassword = repeatPasswordTextField.text!
         guard !username.isEmpty, !email.isEmpty, !createdPassword.isEmpty, !repeatedPassword.isEmpty else { return }
         guard createdPassword == repeatedPassword else { return }
         
-        let user = UserModel(id: UUID().uuidString, name: "", surname: "", username: username, email: email, password: createdPassword, photo: UIImage(), cookbooks: [], shoppingList: [])
+        let user = UserModel(id: UUID().uuidString, name: "", surname: "", username: username, email: email, password: createdPassword, photo: UIImage(), cookbooks: [CookbookModel(name: "Favourite", recipesIds: [])], shoppingList: [])
         userRepository.createUser(user: user)
         CommonResources.shared.logedInUser = user
+        CommonResources.shared.isUserLoggedIn = true
+        CommonResources.shared.setUser()
         Helper.login()
     }
     

@@ -1,8 +1,10 @@
 import Foundation
 
 class CommonResources {
+    let userRepository = UserRepository()
+    let userDefaultsRepository = UserSessionDefaultsRepository()
     
-    var isUserLoggedIn = true
+    var isUserLoggedIn = false
     var logedInUser: UserModel!
     
     let ingredients = ["Chicken",
@@ -29,5 +31,21 @@ class CommonResources {
         let overall = CommonResources()
         return overall
     }()
+    
+    func checkDefaults() {
+        let currentUserId = userDefaultsRepository.getUserId()
+        guard !currentUserId.isEmpty else {
+            print("There is no current user")
+            return
+        }
+        if let user = userRepository.getUser(id: currentUserId) {
+            isUserLoggedIn = true
+            logedInUser = user
+        }
+    }
+    
+    func setUser() {
+        userDefaultsRepository.saveUser(user: logedInUser)
+    }
     
 }

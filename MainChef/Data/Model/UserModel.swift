@@ -35,6 +35,7 @@ class UserModel {
 
 extension UserModel: RealmDataConvertableType {
     func asRealmData() -> UserRealm {
+        print("jopta mapping user data to realm with cookbooks count: \(cookbooks.count)")
         let userRealm = UserRealm()
         userRealm.id = id
         userRealm.name = name

@@ -11,6 +11,7 @@ class CookbookModel {
 extension CookbookModel: RealmDataConvertableType {
     func asRealmData() -> CookbookRealm {
         let cookbookRealm = CookbookRealm()
+        print("jopta mapping to realm cookbook with name: \(name)")
         cookbookRealm.name = name
         cookbookRealm.recipesIds.append(objectsIn: recipesIds)
         return cookbookRealm

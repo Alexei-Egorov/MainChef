@@ -21,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Error initializing realm: \(error)")
         }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
+        CommonResources.shared.checkDefaults()
         if CommonResources.shared.isUserLoggedIn {
             Helper.login()
         } else {

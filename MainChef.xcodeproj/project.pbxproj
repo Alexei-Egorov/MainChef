@@ -10,6 +10,7 @@
 		3D2B34A6167CDF3D52045591 /* Pods_MainChef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9921F66C2AFBECF8A2A64F /* Pods_MainChef.framework */; };
 		93A91E23277B326800D28085 /* SelectedIngredentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A91E21277B326800D28085 /* SelectedIngredentCell.swift */; };
 		93A91E24277B326800D28085 /* SelectedIngredentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A91E22277B326800D28085 /* SelectedIngredentCell.xib */; };
+		93D6A5FA28C767270085B66A /* UserSessionDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D6A5F928C767270085B66A /* UserSessionDefaultsRepository.swift */; };
 		A203162C27C06549002BB225 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */; };
 		A203162F27C06DCD002BB225 /* UITextField + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A203162E27C06DCD002BB225 /* UITextField + Ext.swift */; };
 		A220793B28A444FD000632FB /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A220793A28A444FD000632FB /* UIViewController + Ext.swift */; };
@@ -71,6 +72,7 @@
 		6F01B75C9FBDA75DBB3088C1 /* Pods-MainChef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainChef.release.xcconfig"; path = "Target Support Files/Pods-MainChef/Pods-MainChef.release.xcconfig"; sourceTree = "<group>"; };
 		93A91E21277B326800D28085 /* SelectedIngredentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIngredentCell.swift; sourceTree = "<group>"; };
 		93A91E22277B326800D28085 /* SelectedIngredentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedIngredentCell.xib; sourceTree = "<group>"; };
+		93D6A5F928C767270085B66A /* UserSessionDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDefaultsRepository.swift; sourceTree = "<group>"; };
 		A203162B27C06549002BB225 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		A203162E27C06DCD002BB225 /* UITextField + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Ext.swift"; sourceTree = "<group>"; };
 		A220793A28A444FD000632FB /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		93D6A5F828C766EF0085B66A /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				93D6A5F928C767270085B66A /* UserSessionDefaultsRepository.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		A203162D27C06D91002BB225 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 				A2CDE3AF28B95BC5001D2425 /* Repositories */,
 				A2890DA828B037C1003ECD49 /* Model */,
 				A265BD5828B1408900D9590E /* Realm */,
+				93D6A5F828C766EF0085B66A /* UserDefaults */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -326,13 +337,13 @@
 		A2FC627C2728297E00EB3BCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2CDE9A928C6499D004638F2 /* LoginViewController.swift */,
+				A2CDE9AB28C649C1004638F2 /* RegisterViewController.swift */,
 				A2FC627D2728299600EB3BCE /* SpinnerViewController.swift */,
 				A286535328BA88BD008B345C /* Search */,
 				A2CDE9BB28C67982004638F2 /* Cookbook */,
 				A2FC628327282B3F00EB3BCE /* GroceryViewController.swift */,
 				A2E274EC27BFFA9600525C15 /* ProfileViewController.swift */,
-				A2CDE9A928C6499D004638F2 /* LoginViewController.swift */,
-				A2CDE9AB28C649C1004638F2 /* RegisterViewController.swift */,
 				A28160F928B29621002F2CF0 /* CreateRecipe */,
 			);
 			path = ViewControllers;
@@ -531,6 +542,7 @@
 				A2CDE9BA28C6797C004638F2 /* CookbookViewModel.swift in Sources */,
 				A2CDE3B128B96184001D2425 /* Array + Ext.swift in Sources */,
 				A2FC628427282B3F00EB3BCE /* GroceryViewController.swift in Sources */,
+				93D6A5FA28C767270085B66A /* UserSessionDefaultsRepository.swift in Sources */,
 				A2FC62912728B9C800EB3BCE /* FoodCell.swift in Sources */,
 				A2CDE9AA28C6499D004638F2 /* LoginViewController.swift in Sources */,
 				A2A6422327C40A9400E025F7 /* UIView + Ext.swift in Sources */,

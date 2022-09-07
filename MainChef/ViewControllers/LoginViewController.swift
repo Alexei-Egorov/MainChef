@@ -25,6 +25,8 @@ class LoginViewController: UIViewController {
         guard !email.isEmpty && !password.isEmpty else { return }
         if let gotUser = userRepository.getUser(email: emailTextField.text!) {
             CommonResources.shared.logedInUser = gotUser
+            CommonResources.shared.isUserLoggedIn = true
+            CommonResources.shared.setUser()
             Helper.login()
         } else {
             print("jopta didn't find any user")

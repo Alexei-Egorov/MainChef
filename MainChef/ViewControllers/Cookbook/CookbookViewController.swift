@@ -35,20 +35,21 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
         gradientLayer.startPoint = CGPoint(x: 0.3, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.7, y: 1)
         
-        headerView.layer.addSublayer(gradientLayer)
+        headerView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func setupView() {
-        
+        cookbooksCollectionView.backgroundColor = .clear
     }
     
     //MARK: - UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
+            print("jopta cookbooks count: \(viewModel.usersCookbooks.count)")
             return viewModel.usersCookbooks.count + 1
         } else {
-            return viewModel.selectedCookBook.recipesIds.count
+            return viewModel.selectedCookBook?.recipesIds.count ?? 0
         }
         
     }
@@ -77,10 +78,13 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let popupController = UIAlertController(title: "New cookbook", message: "Provide the name of the new cookbook", preferredStyle: .alert)
                 popupController.addTextField()
                 
+                popupController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                
                 popupController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
                     let providedName = popupController.textFields![0].text!
                     guard !providedName.isEmpty else { return }
                     self?.viewModel.createCookbook(name: providedName)
+                    self?.cookbooksCollectionView.reloadData()
                 }))
                 
                 self.present(popupController, animated: true, completion: nil)
@@ -101,7 +105,7 @@ class CookbookViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 {
-            return CGSize(width: 30, height: 30)
+            return CGSize(width: 70, height: 70)
         } else {
             let itemsPerRow: CGFloat = 2
             let padding: CGFloat = 6
